@@ -1,0 +1,28 @@
+$color-foreground: #262626;
+$color-background: #ffffff;
+$color-links: #4a90e2;
+$color-hover: #4a90e2;
+
+body {
+  display: block;
+  position: relative;
+
+  width: 100%;
+
+  font: 400 16px/1.4 "Roboto Condensed", sans-serif;
+  color: $color-foreground;
+  background-color: $color-background;
+}
+
+a {
+  outline: none;
+  color: $color-links;
+
+  &:hover {
+    color: $color-hover;
+  }
+}
+
+button {
+  background-color: transparent;
+}

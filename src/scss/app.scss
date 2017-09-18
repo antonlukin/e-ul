@@ -1,6 +1,15 @@
-@import "basic/reset";
-/*@import "basic/body";
-@import "basic/container";
+@import "setup/reset";
+@import "setup/define";
+
+@import "basic/icon";
+@import "basic/block";
+@import "basic/toggle";
+
+@import "layout/header";
+@import "layout/topline";
+@import "layout/menu";
+
+/*
 @import "basic/input";
 @import "basic/button";
 

@@ -1,0 +1,38 @@
+.menu {
+  display: block;
+  position: relative;
+
+  width: 100%;
+
+  color: $color-background;
+  background-color: $color-foreground;
+
+  .menu__list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 3rem;
+    width: 100%;
+  }
+
+  .menu__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 1rem;
+
+    font-size: .9375rem;
+    color: $color-background;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .75px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

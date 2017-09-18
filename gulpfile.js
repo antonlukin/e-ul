@@ -1,10 +1,11 @@
-var gulp      = require('gulp');
-var sass      = require('gulp-sass');
-var concat    = require('gulp-concat');
-var minifyCss = require('gulp-minify-css');
-var uglify    = require('gulp-uglify');
-var plumber   = require('gulp-plumber');
-var prefix    = require('gulp-autoprefixer');
+var gulp       = require('gulp');
+var sass       = require('gulp-sass');
+var concat     = require('gulp-concat');
+var minifyCss  = require('gulp-minify-css');
+var uglify     = require('gulp-uglify');
+var plumber    = require('gulp-plumber');
+var flatten    = require('gulp-flatten');
+var prefix     = require('gulp-autoprefixer');
 
 var path = {
 	source: 'src/',
@@ -12,11 +13,11 @@ var path = {
 }
 
 gulp.task('scss', function() {
-    gulp.src([path.source + 'scss/app.scss'])
-        .pipe(plumber())
-        .pipe(sass({
-            errLogToConsole: true
-        }))
+	gulp.src([path.source + 'scss/app.scss'])
+    .pipe(plumber())
+    .pipe(sass({
+        errLogToConsole: true
+    }))
 		.pipe(prefix({
 			browsers: [
 				'ie >= 10',
@@ -30,19 +31,19 @@ gulp.task('scss', function() {
 				'bb >= 10'
 			]
 		}))
-        .pipe(concat('styles.min.css'))
-        .pipe(minifyCss({
-            compatibility: 'ie8'
-        }))
-        .pipe(gulp.dest(path.assets))
+    .pipe(concat('styles.min.css'))
+    .pipe(minifyCss({
+        compatibility: 'ie8'
+    }))
+    .pipe(gulp.dest(path.assets))
 })
 
 gulp.task('js', function() {
-    gulp.src([path.source + 'js/app.js'])
-        .pipe(plumber())
+  gulp.src([path.source + 'js/app.js'])
+    .pipe(plumber())
 		.pipe(uglify())
-        .pipe(concat('scripts.min.js'))
-        .pipe(gulp.dest(path.assets))
+    .pipe(concat('scripts.min.js'))
+    .pipe(gulp.dest(path.assets))
 })
 
 gulp.task('images', function() {
@@ -50,8 +51,14 @@ gulp.task('images', function() {
 		.pipe(gulp.dest(path.assets + '/images/'));
 })
 
-gulp.task('watch', function() {
-    gulp.watch(path.source + '/**/*', ['scss', 'js', 'images']);
+gulp.task('fonts', function() {
+	gulp.src([path.source + '/fonts/**/*.{ttf,woff,eot,svg,woff2}'])
+		.pipe(flatten())
+		.pipe(gulp.dest(path.assets + '/fonts/'));
 })
 
-gulp.task('default', ['js', 'scss', 'images', 'watch']);
+gulp.task('watch', function() {
+  gulp.watch(path.source + '/**/*', ['scss', 'js', 'images']);
+})
+
+gulp.task('default', ['js', 'scss', 'images', 'fonts', 'watch']);

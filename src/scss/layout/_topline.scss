@@ -1,0 +1,109 @@
+.topline {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: relative;
+
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  .topline__banner {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    text-decoration: none;
+
+    @media screen and (max-width: 767px) {
+      justify-content: center;
+    }
+  }
+
+  .topline__logo {
+    display: block;
+    position: relative;
+
+    width: 4rem;
+    height: 4rem;
+    margin-right: .625rem;
+
+    text-indent: -9999rem;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    &.topline__logo--ulgov {
+      background-image: url('images/logo/logo-ulgov.png');
+      background-size: 100% 95%;
+    }
+
+    &.topline__logo--eul {
+      background-image: url('images/logo/logo-eul.png');
+      background-size: 80%;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 3rem;
+      height: 3rem;
+
+      margin: .25rem .5rem;
+    }
+  }
+
+  .topline__title {
+    display: block;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.125;
+    color: $color-foreground;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+
+      font-size: 1rem;
+      font-weight: 400;
+
+      text-align: center;
+    }
+  }
+
+  .topline__toggle {
+    display: none;
+
+    width: 1.375rem;
+    height: 1.125rem;
+
+    cursor: pointer;
+
+    @media screen and (max-width: 1023px) {
+      display: block;
+    }
+  }
+
+  .topline__search {
+    display: none;
+
+    font-size: 1.25rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    @media screen and (max-width: 1023px) {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+  }
+}
