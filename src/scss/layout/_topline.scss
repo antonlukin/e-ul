@@ -4,6 +4,8 @@
   align-items: center;
   position: relative;
 
+  width: 100%;
+  height: 7rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 
@@ -80,6 +82,7 @@
     width: 1.375rem;
     height: 1.125rem;
 
+    outline: none;
     cursor: pointer;
 
     @media screen and (max-width: 1023px) {
@@ -96,6 +99,7 @@
     line-height: 1;
     color: $color-foreground;
 
+    outline: none;
     cursor: pointer;
 
     @media screen and (max-width: 1023px) {

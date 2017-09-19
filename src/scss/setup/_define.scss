@@ -33,3 +33,7 @@ button {
   background-color: $color-links;
   color: $color-background;
 }
+
+::placeholder {
+  color: silver;
+}

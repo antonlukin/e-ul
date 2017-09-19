@@ -2,8 +2,6 @@
   position: relative;
 
   .slider__control {
-    font-size: 1.5rem;
-
     .slider__control-item {
       display: block;
       position: absolute;
@@ -14,12 +12,11 @@
       width: 1.5rem;
       height: 1.5rem;
       margin: 0 2.5rem;
+
+      font-size: 1.5rem;
       line-height: 1;
 
       color: $color-background;
-
-      outline: none;
-      cursor: pointer;
 
       &.slider__control-item--prev {
         left: 0;
@@ -41,10 +38,12 @@
 
       @media screen and (max-width: 767px) {
         margin: 0 1.5rem;
+        font-size: 1.25rem;
       }
 
       @media screen and (max-width: 479px) {
         margin: 0 1rem;
+        font-size: 1.25rem;
       }
     }
   }
