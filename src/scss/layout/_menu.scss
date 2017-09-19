@@ -1,6 +1,7 @@
 .menu {
   display: block;
   position: relative;
+  z-index: 5;
 
   width: 100%;
 
@@ -22,7 +23,7 @@
     align-items: center;
     justify-content: center;
 
-    margin: 0 1rem;
+    margin: 0 .75rem;
 
     font-size: .9375rem;
     color: $color-background;
@@ -33,6 +34,35 @@
 
     &:first-child {
       margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition: right .3s;
+
+    .menu__list {
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      height: 100%;
+      margin-top: 5rem;
+    }
+
+    .menu__item {
+      margin: .5rem 0;
+    }
+
+    &.menu--expand {
+      right: 0;
     }
   }
 }

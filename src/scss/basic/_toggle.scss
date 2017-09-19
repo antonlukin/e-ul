@@ -1,10 +1,8 @@
 .toggle {
-  position: relative;
-
   transform: rotate(0deg);
   transition: .5s ease-in-out;
-  outline: none;
 
+  outline: none;
   cursor: pointer;
 
   .toggle__line {
@@ -35,7 +33,11 @@
     bottom: 0;
   }
 
-  &.open {
+  &.toggle--expand {
+    .toggle__line {
+      background: $color-background;
+    }
+
     .toggle__line:nth-child(1) {
       top: calc(50% - 1px);
       transform: rotate(135deg);
