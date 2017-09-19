@@ -1,7 +1,8 @@
 $color-foreground: #262626;
-$color-background: #ffffff;
+$color-background: #fff;
 $color-links: #4a90e2;
-$color-hover: #4a90e2;
+$color-hover: #3a80d2;
+$color-disabled: #999;
 
 body {
   display: block;
@@ -15,8 +16,9 @@ body {
 }
 
 a {
-  outline: none;
   color: $color-links;
+  outline: none;
+  transition: .2s;
 
   &:hover {
     color: $color-hover;
@@ -25,4 +27,9 @@ a {
 
 button {
   background-color: transparent;
+}
+
+::selection {
+  background-color: $color-links;
+  color: $color-background;
 }

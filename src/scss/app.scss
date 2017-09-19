@@ -1,13 +1,17 @@
 @import "setup/reset";
 @import "setup/define";
 
+@import "vendor/tiny-slider";
+
 @import "basic/icon";
 @import "basic/block";
 @import "basic/toggle";
+@import "basic/button";
 
 @import "layout/header";
 @import "layout/topline";
 @import "layout/menu";
+@import "layout/slider";
 
 /*
 @import "basic/input";

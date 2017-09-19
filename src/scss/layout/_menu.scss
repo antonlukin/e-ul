@@ -35,6 +35,10 @@
     &:first-child {
       margin-left: 0;
     }
+
+    &:hover {
+      color: $color-links;
+    }
   }
 
   @media screen and (max-width: 1023px) {

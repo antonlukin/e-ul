@@ -6,6 +6,7 @@ var uglify     = require('gulp-uglify');
 var plumber    = require('gulp-plumber');
 var flatten    = require('gulp-flatten');
 var prefix     = require('gulp-autoprefixer');
+var order      = require('gulp-order');
 
 var path = {
 	source: 'src/',
@@ -39,7 +40,8 @@ gulp.task('scss', function() {
 })
 
 gulp.task('js', function() {
-  gulp.src([path.source + 'js/app.js'])
+	gulp.src([path.source + '/js/**/*.js'])
+		.pipe(order(["vendor/tiny-slider.js", "app.js"]))
     .pipe(plumber())
 		.pipe(uglify())
     .pipe(concat('scripts.min.js'))
