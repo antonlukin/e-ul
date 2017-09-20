@@ -18,6 +18,9 @@
 
       color: $color-background;
 
+      outline: none;
+      cursor: pointer;
+
       &.slider__control-item--prev {
         left: 0;
 
@@ -94,6 +97,7 @@
     .slider__item-heading {
       display: block;
 
+      font-family: $font-title;
       font-size: 3rem;
       font-weight: 700;
 
@@ -111,6 +115,7 @@
 
       max-width: 36rem;
 
+      font-family: $font-title;
       font-size: 1.375rem;
       font-weight: 300;
 

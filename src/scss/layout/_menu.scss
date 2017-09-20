@@ -25,12 +25,14 @@
 
     margin: 0 .75rem;
 
+    font-family: $font-title;
     font-size: .9375rem;
+    letter-spacing: .75px;
+
     color: $color-background;
 
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: .75px;
 
     &:first-child {
       margin-left: 0;

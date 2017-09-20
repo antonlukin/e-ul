@@ -56,9 +56,11 @@
   .topline__title {
     display: block;
 
+    font-family: $font-title;
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.125;
+    
     color: $color-foreground;
 
     text-transform: uppercase;
