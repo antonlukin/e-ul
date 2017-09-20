@@ -1,0 +1,33 @@
+.promo {
+  display: block;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  width: 100%;
+
+  .promo__wrap {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    border-top: solid 1px $color-border;
+  }
+
+  .promo__heading {
+    width: 100%;
+  }
+
+  .promo__detail {
+    margin: 1.5rem 0;
+  }
+
+  .promo__button {
+    display: block;
+  }
+}

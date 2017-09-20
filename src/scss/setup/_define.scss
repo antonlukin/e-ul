@@ -2,7 +2,9 @@ $color-foreground: #262626;
 $color-background: #fff;
 $color-links: #4a90e2;
 $color-hover: #3a80d2;
+$color-dimmer: #f4f7fb;
 $color-disabled: #999;
+$color-border: #bbb;
 $color-light: #ddd;
 
 $font-title: "Roboto Condensed", sans-serif;
@@ -22,6 +24,7 @@ body {
 
 a {
   color: $color-links;
+  text-decoration: none;
   outline: none;
   transition: .2s;
 
