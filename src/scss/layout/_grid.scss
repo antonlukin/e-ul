@@ -29,6 +29,11 @@
 
     width: calc(100% + 3rem);
     margin: 0 -1.5rem;
+
+    @media screen and (max-width: 767px) {
+      width: calc(100% + 2rem);
+      margin: 0 -1rem;
+    }
   }
 
   .grid__item {
@@ -97,6 +102,7 @@
 
     @media screen and (max-width: 767px) {
       width: 100%;
+      padding: 1rem;
     }
   }
 }
