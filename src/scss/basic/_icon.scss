@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'e-ul';
-  src:  url('fonts/e-ul.eot?hy1k3i');
-  src:  url('fonts/e-ul.eot?hy1k3i#iefix') format('embedded-opentype'),
-    url('fonts/e-ul.ttf?hy1k3i') format('truetype'),
-    url('fonts/e-ul.woff?hy1k3i') format('woff'),
-    url('fonts/e-ul.svg?hy1k3i#e-ul') format('svg');
+  src:  url('fonts/e-ul.eot?ib81xz');
+  src:  url('fonts/e-ul.eot?ib81xz#iefix') format('embedded-opentype'),
+    url('fonts/e-ul.ttf?ib81xz') format('truetype'),
+    url('fonts/e-ul.woff?ib81xz') format('woff'),
+    url('fonts/e-ul.svg?ib81xz#e-ul') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,11 +27,17 @@
 .icon--search:before {
   content: "\e911";
 }
-.icon--chevron:before {
+.icon--top:before {
   content: "\e902";
 }
-.icon--more:before {
+.icon--down:before {
   content: "\e904";
+}
+.icon--left:before {
+  content: "\e905";
+}
+.icon--right:before {
+  content: "\e906";
 }
 .icon--user:before {
   content: "\e925";

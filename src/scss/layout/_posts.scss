@@ -45,7 +45,13 @@
     }
 
     .posts__item-link {
-        display: block;
+      display: block;
+
+      &:hover {
+        .posts__item-excerpt {
+          color: $color-links;
+        }
+      }
     }
 
     .posts__item-title {
@@ -73,17 +79,12 @@
       display: inline-block;
 
       margin-left: .375rem;
+      margin-right: -.8125rem;
 
       font-size: .8125rem;
       color: $color-links;
 
       transform: translateY(2px);
-    }
-
-    &:hover {
-      .posts__item-excerpt {
-        color: $color-links;
-      }
     }
 
     @media screen and (max-width: 1023px) {
