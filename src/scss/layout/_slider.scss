@@ -6,50 +6,55 @@
       display: block;
       position: absolute;
 
-      top: 0;
+      top: calc(50% - 2rem);
       z-index: 2;
 
-      height: 100%;
-      padding: 0 2.5rem;
+      padding: 1.5rem;
 
       font-size: 1.5rem;
       line-height: 1;
 
       color: $color-background;
+      border-radius: 3px;
 
       transition: .4s;
       outline: none;
       cursor: pointer;
 
       &.slider__control-item--prev {
-        left: 0;
+        left: 1rem;
+
+        @media screen and (max-width: 767px) {
+          left: 0;
+        }
       }
 
       &.slider__control-item--next {
-        right: 0;
-      }
+        right: 1rem;
 
-      &:hover {
-        background-color: rgba(0, 0, 0, .3);
+        @media screen and (max-width: 767px) {
+          right: 0;
+        }
       }
 
       &[disabled] {
         color: $color-disabled;
 
         cursor: default;
+      }
 
-        &:hover {
-          background: none;
-        }
+      @media screen and (max-width: 1023px) {
+        padding: 1.5rem;
       }
 
       @media screen and (max-width: 767px) {
-        padding: 0 1.5rem;
         font-size: 1.25rem;
       }
 
       @media screen and (max-width: 479px) {
-        padding: 0 1rem;
+        top: calc(50% - 1.5rem);
+
+        padding: 1rem;
         font-size: 1.25rem;
       }
     }
@@ -87,7 +92,7 @@
       color: $color-background;
 
       @media screen and (max-width: 1359px) {
-        padding: 4rem 6rem;
+        padding: 4rem 6.5rem;
       }
 
       @media screen and (max-width: 767px) {
@@ -147,6 +152,20 @@
 
     @media screen and (max-width: 767px) {
       height: 20rem;
+    }
+  }
+
+  &:hover {
+    .slider__control-item {
+      background-color: rgba(0, 0, 0, .5);
+
+      &[disabled] {
+        background-color: transparent;
+      }
+
+      @media screen and (max-width: 1023px) {
+        background-color: transparent;
+      }
     }
   }
 }
