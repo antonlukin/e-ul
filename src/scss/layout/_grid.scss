@@ -53,17 +53,17 @@
       display: block;
 
       margin-top: .25rem;
-      padding: 1rem;
+      padding: .5rem;
 
       background-color: $color-dimmer;
-      border: solid 1px $color-border;
+      border: solid 1px $color-light;
       border-radius: 3px;
     }
 
     .grid__item-image {
       display: block;
 
-      width: 2.5rem;
+      width: 3rem;
       height: auto;
     }
 
@@ -94,6 +94,7 @@
 
     &:hover {
       background: $color-dimmer;
+      box-shadow: 0 0 1px $color-links;
     }
 
     @media screen and (max-width: 1023px) {

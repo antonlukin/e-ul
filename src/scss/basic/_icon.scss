@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'e-ul';
-  src:  url('fonts/e-ul.eot?2nu5cc');
-  src:  url('fonts/e-ul.eot?2nu5cc#iefix') format('embedded-opentype'),
-    url('fonts/e-ul.ttf?2nu5cc') format('truetype'),
-    url('fonts/e-ul.woff?2nu5cc') format('woff'),
-    url('fonts/e-ul.svg?2nu5cc#e-ul') format('svg');
+  src:  url('fonts/e-ul.eot?hy1k3i');
+  src:  url('fonts/e-ul.eot?hy1k3i#iefix') format('embedded-opentype'),
+    url('fonts/e-ul.ttf?hy1k3i') format('truetype'),
+    url('fonts/e-ul.woff?hy1k3i') format('woff'),
+    url('fonts/e-ul.svg?hy1k3i#e-ul') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -29,6 +29,9 @@
 }
 .icon--chevron:before {
   content: "\e902";
+}
+.icon--more:before {
+  content: "\e904";
 }
 .icon--user:before {
   content: "\e925";

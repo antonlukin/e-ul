@@ -31,13 +31,13 @@
         ],
         "attrs": [],
         "tags": [
-          "arrow_up-01"
+          "arrow-top"
         ],
         "grid": 0
       },
       "attrs": [],
       "properties": {
-        "order": 835,
+        "order": 841,
         "id": 10,
         "name": "chevron",
         "prevSize": 32,
@@ -46,6 +46,29 @@
       "setIdx": 2,
       "setId": 9,
       "iconIdx": 1
+    },
+    {
+      "icon": {
+        "paths": [
+          "M277.333 1024l-85.333-102.4 443.733-409.6-443.733-409.6 85.333-102.4 554.667 512-554.667 512z"
+        ],
+        "attrs": [],
+        "tags": [
+          "arrow-right"
+        ],
+        "grid": 0
+      },
+      "attrs": [],
+      "properties": {
+        "order": 843,
+        "id": 15,
+        "prevSize": 32,
+        "code": 59652,
+        "name": "more"
+      },
+      "setIdx": 2,
+      "setId": 9,
+      "iconIdx": 2
     },
     {
       "icon": {
@@ -68,7 +91,7 @@
       },
       "setIdx": 2,
       "setId": 9,
-      "iconIdx": 2
+      "iconIdx": 3
     },
     {
       "icon": {
@@ -91,7 +114,7 @@
       },
       "setIdx": 2,
       "setId": 9,
-      "iconIdx": 3
+      "iconIdx": 4
     },
     {
       "icon": {
@@ -115,7 +138,7 @@
       },
       "setIdx": 2,
       "setId": 9,
-      "iconIdx": 4
+      "iconIdx": 5
     },
     {
       "icon": {
@@ -139,7 +162,7 @@
       },
       "setIdx": 2,
       "setId": 9,
-      "iconIdx": 5
+      "iconIdx": 6
     },
     {
       "icon": {
@@ -163,7 +186,7 @@
       },
       "setIdx": 2,
       "setId": 9,
-      "iconIdx": 6
+      "iconIdx": 7
     }
   ],
   "height": 1024,
@@ -203,7 +226,10 @@
       "showMetadata": true,
       "showVersion": true,
       "selector": "class",
-      "classSelector": ".icon"
+      "classSelector": ".icon",
+      "includeMetadata": false,
+      "cssVars": true,
+      "cssVarsFormat": "scss"
     },
     "imagePref": {
       "prefix": "icon-",
