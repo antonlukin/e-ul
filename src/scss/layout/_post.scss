@@ -1,0 +1,44 @@
+.post {
+  width: calc(100% - 360px);
+
+  .post__wrap {
+    display: block;
+
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+
+    @media screen and (max-width: 1023px) {
+      padding-top: 1.5rem;
+    }
+  }
+
+  .post__heading {
+    width: 100%;
+  }
+
+  .post__meta {
+    display: block;
+
+    width: 100%;
+    margin-top: 1rem;
+
+    .post__meta-date {
+      display: block;
+
+      margin-bottom: 1rem;
+
+      font-family: $font-title;
+      color: $color-disabled;
+
+      cursor: default;
+    }
+  }
+
+  .post__item {
+    display: block;
+
+    p {
+      margin: 1.5rem 0;
+    }
+  }
+}

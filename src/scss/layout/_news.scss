@@ -1,4 +1,4 @@
-.posts {
+.news {
   display: block;
 
   margin-top: 2rem;
@@ -6,7 +6,7 @@
 
   width: 100%;
 
-  .posts__wrap {
+  .news__wrap {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -17,23 +17,23 @@
     padding-bottom: 1.5rem;
   }
 
-  .posts__heading {
+  .news__heading {
     width: 100%;
   }
 
-  .posts__list {
+  .news__list {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
   }
 
-  .posts__item {
+  .news__item {
     display: block;
 
     width: 48%;
     margin: 1.5rem 0;
 
-    .posts__item-date {
+    .news__item-date {
       display: block;
 
       margin-bottom: 1rem;
@@ -44,17 +44,17 @@
       cursor: default;
     }
 
-    .posts__item-link {
+    .news__item-link {
       display: block;
 
       &:hover {
-        .posts__item-excerpt {
+        .news__item-excerpt {
           color: $color-links;
         }
       }
     }
 
-    .posts__item-title {
+    .news__item-title {
       display: block;
 
       font-family: $font-title;
@@ -63,7 +63,7 @@
       color: $color-foreground;
     }
 
-    .posts__item-excerpt {
+    .news__item-excerpt {
       display: block;
 
       margin-top: .75rem;
@@ -75,7 +75,7 @@
       transition: color .3s;
     }
 
-    .posts__item-more {
+    .news__item-more {
       display: inline-block;
 
       margin-left: .375rem;
@@ -92,7 +92,7 @@
     }
   }
 
-  .posts__button {
+  .news__button {
     display: block;
 
     margin-top: 2rem;
