@@ -25,13 +25,13 @@
 
   .post__item {
     display: block;
-
-    p {
-      margin: 1.5rem 0;
-    }
   }
 
   &.post--flex {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 1023px) {
     width: 100%;
   }
 }

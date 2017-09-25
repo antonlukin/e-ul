@@ -59,6 +59,10 @@
         color: $color-disabled;
         text-transform: uppercase;
       }
+
+      &:hover {
+        color: $color-disabled;
+      }
     }
   }
 }

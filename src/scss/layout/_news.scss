@@ -88,6 +88,7 @@
 
     @media screen and (max-width: 1023px) {
       width: 100%;
+      margin: 1rem 0;
     }
   }
 
@@ -95,5 +96,10 @@
     display: block;
 
     margin-top: 2rem;
+  }
+
+  @media screen and (max-width: 1023px) {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
