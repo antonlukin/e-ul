@@ -17,12 +17,17 @@
     height: 3rem;
     width: 100%;
 
-    @media screen and (max-width: 1279px) {
-      justify-content: space-between;
+    @media screen and (max-width: 1023px) {
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      height: 100%;
+      margin-top: 5rem;
     }
   }
 
-  .menu__item {
+  .menu__link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,6 +58,10 @@
     @media screen and (max-width: 1279px) {
       margin: auto;
     }
+
+    @media screen and (max-width: 1023px) {
+      margin: .5rem 0;
+    }
   }
 
   @media screen and (max-width: 1023px) {
@@ -65,20 +74,7 @@
     overflow-x: hidden;
 
     transition: right .3s;
-
-    .menu__list {
-      flex-flow: column nowrap;
-      justify-content: flex-start;
-      align-items: flex-start;
-
-      height: 100%;
-      margin-top: 5rem;
-    }
-
-    .menu__item {
-      margin: .5rem 0;
-    }
-
+    
     &.menu--expand {
       right: 0;
     }
