@@ -1,28 +1,17 @@
-.grid {
-  display: block;
+.archive {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 
+  width: 100%;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 
-  width: 100%;
-
-  .grid__wrap {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: flex-start;
-
-    width: 100%;
-    padding-top: 1.5rem;
-
-    border-top: solid 1px $color-border;
+  .archive__detail {
+    margin: 1.5rem 0;
   }
 
-  .grid__heading {
-    width: 100%;
-  }
-
-  .grid__list {
+  .archive__list {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -32,27 +21,22 @@
     margin: 0 -1.5rem;
 
     @media screen and (max-width: 767px) {
-      display: block;
-      
       width: calc(100% + 2rem);
       margin: 0 -1rem;
     }
   }
 
-  .grid__item {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-start;
+  .archive__item {
+    display: block;
 
-    width: 32%;
+    width: 48%;
     min-height: 9.25rem;
     margin: 1% 0;
     padding: 1.5rem;
 
     border-radius: 3px;
 
-    .grid__item-logo {
+    .archive__item-logo {
       display: block;
 
       margin-top: .25rem;
@@ -63,19 +47,7 @@
       border-radius: 3px;
     }
 
-    .grid__item-image {
-      display: block;
-
-      width: 3rem;
-      height: auto;
-    }
-
-    .grid__item-detail {
-      width: 100%;
-      margin-left: 1.5rem;
-    }
-
-    .grid__item-tagline {
+    .archive__item-tagline {
       font-family: $font-title;
       font-weight: 700;
       font-size: 1.25rem;
@@ -83,14 +55,14 @@
       line-height: 1.25;
     }
 
-    .grid__item-text {
+    .archive__item-text {
       margin: .25rem 0;
 
       font-family: $font-title;
       color: $color-disabled;
     }
 
-    .grid__item-link {
+    .archive__item-link {
       font-family: $font-title;
       font-size: .875rem;
       color: $color-links;
@@ -103,18 +75,13 @@
 
     @media screen and (max-width: 1023px) {
       width: 48%;
-      min-height: 0;
-      margin-top: .75rem;
-      margin-bottom: .75rem;
-
-      padding: .5rem 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     @media screen and (max-width: 767px) {
       width: 100%;
       padding: 1rem;
-
-      border-radius: 0;
     }
   }
 }

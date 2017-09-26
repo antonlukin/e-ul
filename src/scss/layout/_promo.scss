@@ -24,6 +24,10 @@
 
   .promo__detail {
     margin: 1.5rem 0;
+
+    @media screen and (max-width: 1023px) {
+      margin: .75rem 0;
+    }
   }
 
   .promo__button {
