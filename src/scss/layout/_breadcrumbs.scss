@@ -4,6 +4,7 @@
   z-index: 4;
 
   width: 100%;
+  max-width: 100%;
 
   color: $color-background;
   background-color: $color-ultralight;
@@ -37,6 +38,11 @@
     &:hover {
       color: $color-hover;
     }
+
+    @media screen and (max-width: 767px) {
+      font-size: .8125rem;
+      white-space: nowrap;
+    }
   }
 
   .breadcrumbs__item {
@@ -60,6 +66,6 @@
   }
 
   @media screen and (max-width: 767px) {
-    display: none;
+    overflow-x: scroll;
   }
 }
