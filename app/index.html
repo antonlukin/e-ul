@@ -19,17 +19,30 @@
 <body>
 	<header class="header">
 		<div class="header__topline topline block">
-			<button class="topline__search" role="search">
+			<button class="topline__button topline__button--search" role="button">
 				<span class="icon icon--search"></span>
 			</button>
 
-			<a class="topline__banner" href="#" role="banner">
-				<span class="topline__logo topline__logo--ulgov">Правительство Ульяновской области</span>
-				<span class="topline__logo topline__logo--eul">Корпорация развития ИТ</span>
-				<span class="topline__title">Корпорация развития ИТ<br> Ульяновской области</span>
-			</a>
+			<div class="topline__logo">
+				<a class="topline__logo-link logo" href="#" role="banner">
+					<span class="logo__image logo__image--ulgov">Правительство Ульяновской области</span>
+					<span class="logo__image logo__image--eul">Корпорация развития ИТ</span>
+					<span class="logo__title">Корпорация развития ИТ<br> Ульяновской области</span>
+				</a>
+			</div>
 
-			<button class="topline__toggle toggle" role="button">
+			<div class="topline__search">
+				<form class="topline__search-form search" action="#" method="post">
+					<input class="search__input input" type="text" value="" role="search" placeholder="Поиск по сайту">
+
+					<button class="search__button" type="submit">
+						<span class="icon icon--search"></span>
+						<span class="icon icon--right"></span>
+					</button>
+				</form>
+			</div>
+
+			<button class="topline__button topline__button--menu toggle" role="button">
 				<span class="toggle__line"></span>
 				<span class="toggle__line"></span>
 				<span class="toggle__line"></span>
@@ -88,13 +101,6 @@
 				</div>
 			</article>
 		</div>
-	</section>
-
-	<section class="search">
-		<form class="search__form block" action="#" method="post">
-			<input class="search__input input" type="text" value="" role="search" placeholder="Поиск по сайту">
-			<button class="search__button button" type="submit">Найти</button>
-		</form>
 	</section>
 
 	<section class="news block">

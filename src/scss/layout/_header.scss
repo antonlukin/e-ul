@@ -5,7 +5,7 @@
 
   background-color: $color-background;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1023px) {
     &.header--underline {
       border-bottom: solid 1px $color-light;
     }
