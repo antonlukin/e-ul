@@ -18,6 +18,7 @@
     loop: false,
     slideBy: 'page',
     nav: false,
+    rewind: true,
     controlsContainer: ".slider__control"
   });
 })();
