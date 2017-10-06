@@ -74,9 +74,10 @@
     overflow-x: hidden;
 
     transition: right .3s;
-    
+
     &.menu--expand {
       right: 0;
+      z-index: 10;
     }
   }
 }

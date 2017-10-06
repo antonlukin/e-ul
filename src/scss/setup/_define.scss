@@ -21,6 +21,10 @@ body {
   font: 400 16px/1.5 $font-regular;
   color: $color-foreground;
   background-color: $color-background;
+
+  &.single {
+    background-color: $color-ultralight;
+  }
 }
 
 a {

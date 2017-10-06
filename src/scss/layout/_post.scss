@@ -1,5 +1,10 @@
 .post {
   width: calc(100% - 22.5rem);
+  padding: 2rem 4rem;
+
+  background-color: $color-background;
+  box-shadow: 0 0 2px $color-border;
+  border-radius: 3px;
 
   .post__heading {
     width: 100%;
