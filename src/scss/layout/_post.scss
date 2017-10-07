@@ -1,5 +1,5 @@
 .post {
-  width: calc(100% - 22.5rem);
+  width: 100%;
   padding: 2rem 4rem;
 
   background-color: $color-background;
@@ -32,11 +32,13 @@
     display: block;
   }
 
-  &.post--flex {
-    width: 100%;
+  @media screen and (max-width: 1023px) {
+    padding: 2rem;
   }
 
-  @media screen and (max-width: 1023px) {
-    width: 100%;
+  @media screen and (max-width: 767px) {
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
   }
 }
