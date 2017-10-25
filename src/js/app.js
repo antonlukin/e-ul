@@ -4,6 +4,7 @@
 
     this.classList.toggle('toggle--expand');
     document.querySelector('.menu').classList.toggle('menu--expand');
+    document.querySelector('body').classList.toggle('locked');
   })
 
   document.querySelector('.topline__button--search').addEventListener('click', function(e) {

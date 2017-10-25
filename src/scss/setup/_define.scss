@@ -29,6 +29,10 @@ body {
       background-color: $color-background;
     }
   }
+
+  &.locked {
+    overflow-y: hidden;
+  }
 }
 
 a {
