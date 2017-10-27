@@ -23,7 +23,6 @@
       align-items: flex-start;
 
       height: 100%;
-      margin-top: 5rem;
     }
   }
 
@@ -60,7 +59,7 @@
     }
 
     @media screen and (max-width: 1023px) {
-      margin: .5rem 0;
+      margin: 1rem 0;
     }
   }
 
@@ -69,15 +68,18 @@
     top: 0;
     bottom: 0;
     right: 100%;
+    z-index: 10;
+
     height: auto;
+    padding: 4rem 1rem 3rem;
     overflow-y: auto;
     overflow-x: hidden;
+
 
     transition: right .3s;
 
     &.menu--expand {
       right: 0;
-      z-index: 10;
     }
   }
 }
