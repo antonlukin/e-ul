@@ -11,16 +11,18 @@ namespace app\helpers;
 
 use Flight as app;
 
-
+/**
+ * Application core loader
+ *
+ * Init all nested routers and classes and set required variables
+ * using Flight framework ({@link https://github.com/mikecao/flight}) as engine
+ *
+ * @since 1.0
+ */
 class core {
-	public function __construct($base) {
-		/**
-		* We use Flight framework as engine
-		*
-		* @link https://github.com/mikecao/flight
-		* @since 1.0
-		*/
 
+	public function __construct($base) {
+		app::set('base', $base);
 	}
 
 	public function load() {
