@@ -22,7 +22,7 @@ use Flight as app;
 class rewrite {
 
 	public function __construct() {
-		$rules = app::get("controllers");
+		$rules = app::get("app.controllers");
 
 		// Load all availible routes
 		$this->load($rules);

@@ -13,9 +13,9 @@ use Flight as app;
 
 
 /**
- * DB init class
+ * Database class init
  *
- * A simple database toolkit for PHP Sparrow
+ * To manage db we use simple database toolkit Sparrow
  * ({@link https://github.com/mikecao/sparrow})
  *
  * @since 1.0

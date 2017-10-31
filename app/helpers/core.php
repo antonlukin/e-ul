@@ -23,7 +23,7 @@ use Flight as app;
 class core {
 
 	public function __construct($base) {
-		app::set('base', $base);
+		app::set('app.base', $base);
 
 		// Map required helpers methods
 		app::map('conf', [$this, 'conf']);
@@ -31,11 +31,11 @@ class core {
 	}
 
  	public function run() {
-		// Load registered classes
-		app::load();
-
 		// Set start options
 		app::conf();
+
+		// Load registered classes
+		app::load();
 
 		// Set rewrite rules
 		app::rewrite();
@@ -45,7 +45,10 @@ class core {
 	}
 
 	public function conf() {
-		app::set('controllers', ['admin', 'front']);
+        $base = app::get('app.base');
+
+		app::set('app.controllers', ['admin', 'front']);
+		app::set('flight.views.path', $base . "/themes/");
 	}
 
 	public function load() {

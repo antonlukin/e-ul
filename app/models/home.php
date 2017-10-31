@@ -7,14 +7,17 @@
  */
 
 
-namespace app\routes;
+namespace app\models;
 
 use Flight as app;
 
 
-class front {
-	public function init() {
-		app::route('/', ['app\models\home', 'render']);
+class home {
+	public function __construct() {
+
+	}
+
+	public function render() {
+		app::render('views/home');
 	}
 }
-
