@@ -11,6 +11,7 @@ namespace app\helpers;
 
 use Flight as app;
 
+
 /**
  * Application core loader
  *
@@ -23,15 +24,41 @@ class core {
 
 	public function __construct($base) {
 		app::set('base', $base);
+
+		// Map required helpers methods
+		app::map('conf', [$this, 'conf']);
+		app::map('load', [$this, 'load']);
+	}
+
+ 	public function run() {
+		// Load registered classes
+		app::load();
+
+		// Set start options
+		app::conf();
+
+		// Set rewrite rules
+		app::rewrite();
+
+		// Start application
+		app::start();
+	}
+
+	public function conf() {
+		app::set('controllers', ['admin', 'front']);
 	}
 
 	public function load() {
+        // Map global methods
+		app::map('env', [$this, 'env']);
 
-		app::route('/', function(){
-			echo '1';
-		});
-
-		app::start();
-
+		// Register required classes with Flight
+		app::register('db', 'app\helpers\database');
+		app::register('rewrite', 'app\helpers\rewrite');
 	}
+
+	public function env($name, $default = '') {
+		return getenv($name) ? getenv($name) : $default;
+	}
+
 }

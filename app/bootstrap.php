@@ -21,6 +21,5 @@
  *
  * @since 1.0
  */
-(new app\helpers\core(__DIR__))->load();
-
+(new app\helpers\core(__DIR__))->run();
 
