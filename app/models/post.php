@@ -12,12 +12,15 @@ namespace app\models;
 use Flight as app;
 
 
-class home {
+class single {
 	public function __construct() {
 
 	}
 
-	public function render($route) {
-		app::render('regions/home');
+	public function post() {
+		app::render('views/home');
+	}
+
+	public function page() {
 	}
 }

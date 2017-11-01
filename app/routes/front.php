@@ -14,7 +14,10 @@ use Flight as app;
 
 class front {
 	public function init() {
-		app::route('/', ['app\models\home', 'render']);
+		app::route('/', [
+			'app\models\home',
+			'render'
+		], true);
 	}
 }
 

@@ -12,12 +12,14 @@ namespace app\models;
 use Flight as app;
 
 
-class home {
-	public function __construct() {
+class header {
+	public $options = null;
 
+	public function __construct($options = []) {
+		$this->options = $options;
 	}
 
-	public function render($route) {
-		app::render('regions/home');
+	public function render() {
+		app::render('modules/header', ['title' => 'Title']);
 	}
 }
