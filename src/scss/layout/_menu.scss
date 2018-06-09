@@ -31,7 +31,7 @@
     align-items: center;
     justify-content: center;
 
-    margin: 0 1.25rem;
+    margin: 0 .75rem;
 
     font-family: $font-title;
     font-size: .9375rem;
@@ -41,6 +41,10 @@
 
     text-decoration: none;
     text-transform: uppercase;
+
+    &.menu__link--current {
+      color: $color-border;
+    }
 
     &:first-child {
       margin-left: 0;

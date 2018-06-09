@@ -1,9 +1,27 @@
 .sidebar {
-  display: block;
+  display: flex;
+  flex-flow: column;
 
-  width: 18.25rem;
+  width: 18.75rem;
+  height: auto;
+  padding: 1rem;
+
+  background-color: $color-background;
+  box-shadow: 0 0 2px $color-border;
+  border-radius: 3px;
+
+  @media screen and (max-width: 1023px) {
+    display: none;
+
+    flex-flow: row wrap;
+
+    width: 100%;
+    margin-top: 2rem;
+  }
 
   @media screen and (max-width: 767px) {
-    width: 100%;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
   }
 }

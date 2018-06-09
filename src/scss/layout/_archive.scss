@@ -1,14 +1,11 @@
 .archive {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-flow: column nowrap;
 
   width: 100%;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
 
   .archive__detail {
-    margin: 1.5rem 0;
+    margin: 1.5rem 0 1rem;
   }
 
   .archive__list {
@@ -18,7 +15,7 @@
     align-items: flex-start;
 
     width: calc(100% + 3rem);
-    margin: 0 -1.5rem;
+    margin: 0 -1rem;
 
     @media screen and (max-width: 767px) {
       width: calc(100% + 2rem);
@@ -27,24 +24,25 @@
   }
 
   .archive__item {
-    display: block;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
 
-    width: 48%;
-    min-height: 9.25rem;
-    margin: 1% 0;
-    padding: 1.5rem;
+    width: calc(50% - 2rem);
+    margin: .5rem 0;
+    padding: 1rem;
 
     border-radius: 3px;
 
     .archive__item-logo {
       display: block;
+      flex-shrink: 0;
 
+      width: 3rem;
+      height: 3rem;
       margin-top: .25rem;
+      margin-right: 1.25rem;
       padding: .5rem;
-
-      background-color: $color-dimmer;
-      border: solid 1px $color-light;
-      border-radius: 3px;
     }
 
     .archive__item-tagline {
@@ -75,8 +73,6 @@
 
     @media screen and (max-width: 1023px) {
       width: 48%;
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
     }
 
     @media screen and (max-width: 767px) {

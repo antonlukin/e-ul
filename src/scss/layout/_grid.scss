@@ -33,7 +33,7 @@
 
     @media screen and (max-width: 767px) {
       display: block;
-      
+
       width: calc(100% + 2rem);
       margin: 0 -1rem;
     }
@@ -53,10 +53,17 @@
     border-radius: 3px;
 
     .grid__item-logo {
-      display: block;
+      display: flex;
+      flex-basis: 3.5rem;
+      flex-shrink: 0;
 
+      width: 3.5rem;
+      height: 3.5rem;
       margin-top: .25rem;
       padding: .5rem;
+
+      font-size: .75rem;
+      font-weight: 300;
 
       background-color: $color-dimmer;
       border: solid 1px $color-light;
@@ -66,7 +73,7 @@
     .grid__item-image {
       display: block;
 
-      width: 3rem;
+      width: 100%;;
       height: auto;
     }
 

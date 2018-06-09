@@ -1,0 +1,13 @@
+.widget {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 479px) {
+
+  }
+}

@@ -1,0 +1,35 @@
+.pagination {
+	display: block;
+
+  width: 100%;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+
+  border-top: solid 1px $color-light;
+
+	.nav-links {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-flow: row wrap;
+
+		width: 100%;
+	}
+
+	.page-numbers {
+		display: block;
+
+		padding-right: 1.5rem;
+		font-size: 1.5rem;
+		font-weight: 300;
+		line-height: 1;
+
+		&.next {
+			font-size: .875rem;
+		}
+
+		&.prev {
+			display: none;
+		}
+	}
+}

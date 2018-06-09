@@ -1,6 +1,6 @@
 .post {
-  width: 100%;
-  padding: 2rem 4rem;
+  width: calc(100% - 20.25rem);
+  padding: 1.5rem 2rem;
 
   background-color: $color-background;
   box-shadow: 0 0 2px $color-border;
@@ -32,7 +32,22 @@
     display: block;
   }
 
+  &.post--stretch {
+    width: 100%;
+    padding: 2rem 4rem;
+
+    @media screen and (max-width: 1023px) {
+      padding: 2rem;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding: 0;
+    }
+  }
+
   @media screen and (max-width: 1023px) {
+    width: 100%;
+
     padding: 2rem;
   }
 

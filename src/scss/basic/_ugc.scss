@@ -49,6 +49,20 @@
     }
   }
 
+  strong {
+    font-weight: 600;
+  }
+
+  blockquote {
+    display: block;
+
+    padding: 0 2rem;
+    overflow: hidden;
+
+    background-color: $color-dimmer;
+    border-left: solid 3px $color-links;
+  }
+
   figure {
     display: block;
 
@@ -56,16 +70,8 @@
 
     & > img {
       display: block;
+
       max-width: 100%;
-    }
-
-    & > blockquote {
-      display: block;
-
-      padding: 1rem 1rem 1rem 2rem;
-
-      background-color: $color-dimmer;
-      border-left: solid 3px $color-links;
     }
 
     & > figcaption {

@@ -8,4 +8,8 @@
   .header__breadcrumbs {
     z-index: 5;
   }
+
+  @media screen and (max-width: 1023px) {
+    border-bottom: solid 1px $color-ultralight;
+  }
 }

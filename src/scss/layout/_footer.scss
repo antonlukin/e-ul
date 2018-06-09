@@ -2,7 +2,35 @@
   display: block;
   position: relative;
 
+  margin-top: auto;
+
   background-color: $color-foreground;
+
+  .footer__copy {
+		display: block;
+
+    .footer__copy-inner {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+
+
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+
+      border-top: solid 1px $color-border;
+    }
+
+    .footer__copy-info {
+			display: block;
+
+			font-size: .8125rem;
+			font-weight: 300;
+			letter-spacing: .5px;
+			color: $color-border;
+    }
+  }
 
   .footer__nav {
     display: flex;
@@ -13,7 +41,7 @@
     padding-top: 1rem;
     padding-bottom: 3rem;
 
-    .footer__nav-column {
+    .menu-item {
       display: flex;
       flex-flow: column wrap;
       width: 30%;
@@ -27,41 +55,44 @@
       }
     }
 
-    .footer__nav-item {
-      display: block;
-
-      margin: .25rem 0;
-
-      &.footer__nav-item--heading {
-        margin: 2rem 0 .75rem;
-
-        @media screen and (max-width: 1023px) {
-          margin: 1.5rem 0 .5rem;
-        }
-      }
-    }
-
-    .footer__nav-link {
-      display: inline-block;
-
+    .footer__menu-link {
+      font-family: $font-title;
       font-size: .9375rem;
       font-weight: 400;
+      letter-spacing: .75px;
 
-      color: $color-light;
-      text-decoration: none;
-
-      &.footer__nav-link--heading {
-        font-family: $font-title;
-        font-size: .9375rem;
-        font-weight: 400;
-        letter-spacing: .75px;
-
-        color: $color-disabled;
-        text-transform: uppercase;
-      }
+      margin: 2rem 0 .75rem;
+      color: $color-disabled;
+      text-transform: uppercase;
 
       &:hover {
         color: $color-disabled;
+      }
+    }
+
+    .sub-menu {
+      .menu-item {
+        display: block;
+
+        width: 100%;
+      }
+
+      .footer__menu-link {
+        display: inline-block;
+        margin: .25rem 0;
+
+        font-family: $font-regular;
+        letter-spacing: 0;
+        font-size: .9375rem;
+        font-weight: 400;
+
+        color: $color-light;
+        text-decoration: none;
+        text-transform: none;
+
+        &:hover {
+          color: $color-disabled;
+        }
       }
     }
   }
