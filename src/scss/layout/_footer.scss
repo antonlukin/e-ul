@@ -2,7 +2,7 @@
   display: block;
   position: relative;
 
-  margin-top: auto;
+  margin-top: 4rem;
 
   background-color: $color-foreground;
 
@@ -95,5 +95,9 @@
         }
       }
     }
+  }
+
+  @media screen and (max-width: 1023px) {
+    margin-top: 2rem;
   }
 }

@@ -1,10 +1,6 @@
 .post {
-  width: calc(100% - 20.25rem);
-  padding: 1.5rem 2rem;
-
-  background-color: $color-background;
-  box-shadow: 0 0 2px $color-border;
-  border-radius: 3px;
+  width: calc(100% - 21.25rem);
+  min-height: 16rem;
 
   .post__heading {
     width: 100%;
@@ -30,30 +26,15 @@
 
   .post__item {
     display: block;
+
+    margin-top: 1rem;
   }
 
   &.post--stretch {
     width: 100%;
-    padding: 2rem 4rem;
-
-    @media screen and (max-width: 1023px) {
-      padding: 2rem;
-    }
-
-    @media screen and (max-width: 767px) {
-      padding: 0;
-    }
   }
 
   @media screen and (max-width: 1023px) {
     width: 100%;
-
-    padding: 2rem;
-  }
-
-  @media screen and (max-width: 767px) {
-    padding: 0;
-    box-shadow: none;
-    border-radius: 0;
   }
 }

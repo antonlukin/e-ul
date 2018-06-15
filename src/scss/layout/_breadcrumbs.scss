@@ -1,11 +1,12 @@
 .breadcrumbs {
   display: block;
   position: relative;
+  z-index: 4;
 
   width: 100%;
   max-width: 100%;
 
-  color: $color-background;
+  color: $color-foreground;
   background-color: $color-ultralight;
 
   .breadcrumbs__list {
@@ -18,10 +19,11 @@
     width: 100%;
   }
 
-  .breadcrumbs__link {
+  .breadcrumbs__item {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: default;
 
     margin: 0 1.25rem;
 
@@ -29,42 +31,48 @@
     font-size: .9375rem;
     letter-spacing: .75px;
 
-    color: $color-links;
-
     text-decoration: none;
     text-transform: uppercase;
 
-    &:hover {
-      color: $color-hover;
+    &.breadcrumbs__item--link {
+      cursor: pointer;
+
+      color: $color-links;
+
+      &:hover {
+        color: $color-hover;
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 1.25rem;
+
+      @media screen and (max-width: 767px) {
+        padding-right: .75rem;
+      }
+    }
+
+    @media screen and (max-width: 1023px) {
+      white-space: nowrap;
     }
 
     @media screen and (max-width: 767px) {
       font-size: .8125rem;
-      white-space: nowrap;
+
+      margin: 0 .75rem;
     }
   }
 
-  .breadcrumbs__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: .625rem;
+  .icon {
     color: $color-foreground;
-
-    &:nth-child(n + 2) {
-      @extend .icon;
-      @extend .icon--right;
-    }
-
-    &:first-child {
-      .breadcrumbs__link {
-        margin-left: 0;
-      }
-    }
+    font-size: .625rem;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1023px) {
     overflow-x: scroll;
   }
 }

@@ -9,15 +9,20 @@
   .news__wrap {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
 
     width: 100%;
+    min-height: 16rem;
     padding-bottom: 1.5rem;
   }
 
   .news__heading {
     width: 100%;
+  }
+
+  .news__message {
+    margin-top: 1rem;
   }
 
   .news__list {

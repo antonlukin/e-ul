@@ -22,14 +22,6 @@ body {
   color: $color-foreground;
   background-color: $color-background;
 
-  &.framed {
-    background-color: $color-ultralight;
-
-    @media screen and (max-width: 767px) {
-      background-color: $color-background;
-    }
-  }
-
   &.locked {
     overflow-y: hidden;
   }

@@ -20,7 +20,7 @@
       color: $color-background;
       border-radius: 3px;
 
-      transition: .4s;
+      transition: background .4s;
       outline: none;
       cursor: pointer;
 
@@ -67,7 +67,7 @@
     position: relative;
 
     height: 25rem;
-    background-position: center center;
+    background-position: center left;
     background-size: cover;
 
     .slider__item-wrap {
@@ -85,7 +85,7 @@
 
     .slider__item-content {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: flex-start;
       flex-flow: column;
 
@@ -108,7 +108,7 @@
     .slider__item-heading {
       display: block;
 
-      margin: .5rem 0;
+      margin: .5rem 0 1rem;
 
       font-family: $font-title;
       font-size: 3rem;
