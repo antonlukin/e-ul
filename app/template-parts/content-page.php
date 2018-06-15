@@ -26,7 +26,7 @@
                     <h3 class="archive__item-tagline"><?php echo the_title(); ?></h3>
 
                     <?php if( has_excerpt() ) : ?>
-                        <p class="archive__item-text"><?php the_excerpt(); ?></p>
+                        <p class="archive__item-text"><?php echo get_the_excerpt(); ?></p>
                     <?php endif; ?>
                 </div>
 

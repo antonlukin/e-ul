@@ -217,3 +217,20 @@ add_filter('pre_get_posts', function($query) {
 
     return $query;
 });
+
+// Disable post attachment pages
+// Redirect to post parent if exists
+add_action('template_redirect', function() {
+    global $post;
+
+    if(!is_attachment())
+        return false;
+
+    if(isset($post->post_parent) && $post->post_parent > 0)
+        $url = get_permalink($post->post_parent);
+    else
+        $url = home_url('/');
+
+    wp_redirect(esc_url($url), 301);
+    exit;
+});
