@@ -69,6 +69,7 @@
 
     .news__item-excerpt {
       display: block;
+      position: relative;
 
       margin-top: .75rem;
 
@@ -81,14 +82,14 @@
 
     .news__item-more {
       display: inline-block;
+      position: absolute;
 
-      margin-left: .375rem;
-      margin-right: -.8125rem;
+      margin-left: .5rem;
 
       font-size: .8125rem;
       color: $color-links;
 
-      transform: translateY(1px);
+      transform: translateY(50%);
     }
 
     @media screen and (max-width: 1023px) {

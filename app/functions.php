@@ -26,7 +26,7 @@ add_action('wp_print_styles', function() {
 // Insert fonts
 add_action('wp_enqueue_scripts', function() {
     $query_args = array(
-        'family' => 'Roboto:300,400',
+        'family' => 'Roboto:300,400,700',
         'subset' => 'latin,cyrillic',
     );
 

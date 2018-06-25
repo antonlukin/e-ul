@@ -18,11 +18,11 @@
     margin: 2rem 0 .75rem;
 
     font-family: $font-title;
-    font-size: 1.75rem;
+    font-size: 1.625rem;
     font-weight: 700;
 
     @media screen and (max-width: 1023px) {
-      font-size: 1.625rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -30,11 +30,11 @@
     margin: 2rem 0 .5rem;
 
     font-family: $font-title;
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 700;
 
     @media screen and (max-width: 1023px) {
-      font-size: 1.375rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -44,6 +44,10 @@
     font-family: $font-title;
     font-size: 1.25rem;
     font-weight: 700;
+
+    @media screen and (max-width: 1023px) {
+      font-size: 1.125rem;
+    }
   }
 
   h5, h6 {
@@ -55,7 +59,7 @@
   }
 
   h2, h3, h4, h5, h6 {
-    strong {
+    span {
       display: block;
 
       font-size: 1rem;
