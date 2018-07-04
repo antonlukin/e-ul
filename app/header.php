@@ -61,4 +61,5 @@
         </nav>
     </div>
 </header>
-<?php the_breadcrumb()?>
+
+<?php the_breadcrumbs(); ?>

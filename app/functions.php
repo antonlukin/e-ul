@@ -235,15 +235,18 @@ add_action('template_redirect', function() {
     exit;
 });
 
-function the_breadcrumb($sep = '<i class="icon icon--right"></i>') {
+
+function the_breadcrumbs($sep = '<i class="icon icon--right"></i>') {
     if (!is_front_page() && is_page()) {
         echo '<div class="breadcrumbs"><nav class="breadcrumbs__list block" role="navigation">';
+
         printf(
             '<a class="breadcrumbs__item breadcrumbs__item--link" href="%1$s">%2$s</a>%3$s',
             get_option('home'),
             __('Главная страница', 'e-ul'),
             $sep
         );
+
         if( $ancs = get_ancestors(get_the_ID(),'page') ) {
             foreach( $ancs as $anc ) {
                 $post = get_post( $anc );
@@ -256,8 +259,7 @@ function the_breadcrumb($sep = '<i class="icon icon--right"></i>') {
             }
         }
 
-        printf(
-            '<span class="breadcrumbs__item">%1$s</span>',
+        printf('<span class="breadcrumbs__item">%1$s</span>',
             get_the_title()
         );
 
