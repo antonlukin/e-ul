@@ -17,12 +17,16 @@
 
     height: 3rem;
     width: 100%;
+    overflow: hidden;
+
+    @media screen and (max-width: 1023px) {
+      overflow-x: scroll;
+    }
   }
 
   .breadcrumbs__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    flex: 0 0 auto;
     cursor: default;
 
     margin: 0 1.25rem;
@@ -44,6 +48,18 @@
       }
     }
 
+    &.breadcrumbs__item--text {
+      flex: 1 1 auto;
+      text-overflow: ellipsis;
+
+      white-space: nowrap;
+      overflow: hidden;
+
+      @media screen and (max-width: 1023px) {
+        flex: 0 0 auto;
+      }
+    }
+
     &:first-child {
       margin-left: 0;
     }
@@ -56,10 +72,6 @@
       }
     }
 
-    @media screen and (max-width: 1023px) {
-      white-space: nowrap;
-    }
-
     @media screen and (max-width: 767px) {
       font-size: .8125rem;
 
@@ -70,9 +82,5 @@
   .icon {
     color: $color-foreground;
     font-size: .625rem;
-  }
-
-  @media screen and (max-width: 1023px) {
-    overflow-x: scroll;
   }
 }

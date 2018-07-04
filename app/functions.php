@@ -247,9 +247,11 @@ function the_breadcrumbs($sep = '<i class="icon icon--right"></i>') {
             $sep
         );
 
-        if( $ancs = get_ancestors(get_the_ID(),'page') ) {
-            foreach( $ancs as $anc ) {
-                $post = get_post( $anc );
+        $ancestors = array_reverse(get_ancestors(get_the_ID(), 'page'));
+        if( $ancestors) {
+            foreach( $ancestors as $item ) {
+                $post = get_post( $item );
+
                 printf(
                     '<a class="breadcrumbs__item breadcrumbs__item--link" href="%1$s">%2$s</a>%3$s',
                     get_the_permalink($post->ID),
@@ -259,7 +261,7 @@ function the_breadcrumbs($sep = '<i class="icon icon--right"></i>') {
             }
         }
 
-        printf('<span class="breadcrumbs__item">%1$s</span>',
+        printf('<span class="breadcrumbs__item breadcrumbs__item--text">%1$s</span>',
             get_the_title()
         );
 
