@@ -61,3 +61,4 @@
         </nav>
     </div>
 </header>
+<?php the_breadcrumb()?>
