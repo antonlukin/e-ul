@@ -23,9 +23,8 @@
   }
 
   .grid__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    display: flex;
+    flex-flow: row wrap;
 
     width: calc(100% + 3rem);
     margin: 1rem -1.5rem;
@@ -52,7 +51,7 @@
     justify-content: space-between;
     align-items: flex-start;
 
-    width: 100%;
+    width: calc(100% / 3);
     min-height: 9.25rem;
     padding: 1.5rem;
 
