@@ -49,12 +49,26 @@
 			</div>
 		</article>
 
+        <article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/leader-russia.jpg)">
+			<div class="slider__item-wrap">
+
+				<div class="slider__item-content block">
+					<h2 class="slider__item-heading">Лидеры России</h2>
+					<h3 class="slider__item-description">Бросьте вызов тысячам управленцев и попадите в сообщество лидеров, которые определят будущее России</h3>
+
+                    <a class="slider__item-button button" href="https://лидерыроссии.рф/" target="_blank">Подробнее</a>
+				</div>
+
+			</div>
+		</article>
+
+
         <article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/best-employee.jpg)">
 			<div class="slider__item-wrap">
 
 				<div class="slider__item-content block">
 					<h2 class="slider__item-heading">Лучшие сотрудники Корпорации</h2>
-					<h3 class="slider__item-description">Победители ежеквартального конкурса &laquo;Лучший специалист&raquo;</h3>
+					<h3 class="slider__item-description">Победители конкурса &laquo;Лучший специалист&raquo;</h3>
 
 					<a class="slider__item-button button" href="<?php echo home_url('/best-employee/'); ?>" target="_blank">Подробнее</a>
 				</div>
