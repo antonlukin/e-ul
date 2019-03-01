@@ -23,6 +23,19 @@
 			</div>
 		</article>
 
+	    <article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/figures.png)">
+			<div class="slider__item-wrap">
+
+				<div class="slider__item-content block">
+					<h2 class="slider__item-heading">Госуслуги в цифрах</h2>
+					<h3 class="slider__item-description">О реализации региональных проектов в цифрах и фактах</h3>
+
+					<a class="slider__item-button button" href="/gosuslugi-in-figures/" target="_blank">Подробнее</a>
+				</div>
+
+			</div>
+		</article>
+
 	    <article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/mamacenter.jpg)">
 			<div class="slider__item-wrap">
 
