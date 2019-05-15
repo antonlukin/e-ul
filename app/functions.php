@@ -52,18 +52,6 @@ add_filter('excerpt_length', function($length) {
 });
 
 
-// Change mail from fields
-add_filter('wp_mail_from_name', function($name) {
-    return __('e-ul webmaster', 'e-ul');
-});
-
-add_filter('wp_mail_from', function($email) {
-    $hostname = parse_url(site_url("/"), PHP_URL_HOST);
-
-    return "no-reply@{$hostname}";
-});
-
-
 // Remove useless widgets from wp-admin section
 add_action('admin_init', function() {
     remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');

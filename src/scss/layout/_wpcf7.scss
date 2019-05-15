@@ -1,0 +1,25 @@
+.wpcf7 {
+  max-width: 40rem;
+
+  .ajax-loader,
+  .wpcf7-not-valid-tip {
+    display: none;
+  }
+
+  .wpcf7-not-valid {
+    border: solid 1px #d9534f;
+  }
+
+  .wpcf7-response-output {
+    margin: 0;
+    padding: 0 0 1rem;
+
+    border: 0;
+
+    font-size: .875rem;
+  }
+
+  input[type="submit"] {
+    max-width: 10rem;
+  }
+}
