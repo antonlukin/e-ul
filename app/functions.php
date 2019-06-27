@@ -19,7 +19,7 @@ add_action('wp_enqueue_scripts', function() {
 
 // Insert styles
 add_action('wp_print_styles', function() {
-       wp_enqueue_style('eul-styles', get_bloginfo('template_url') . '/assets/styles.min.css', [], '0.3');
+       wp_enqueue_style('eul-styles', get_bloginfo('template_url') . '/assets/styles.min.css', [], '0.4');
 });
 
 
