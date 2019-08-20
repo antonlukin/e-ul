@@ -8,9 +8,9 @@
 
 			<a href="https://www.ok.ru/pravitdlyagrazhdan73"><img class="alignnone wp-image-1282" src="/wp-content/uploads/2018/05/images_ok.png" alt="" width="59" height="59" /></a>&nbsp;
 
-			<a href="https://vk.com/mfc_uln"><img class="alignnone wp-image-1283" src="/wp-content/uploads/2018/05/images_vk.jpg" alt="" width="61" height="61" /></a>&nbsp;
+			<a href="https://vk.com/krit_uln"><img class="alignnone wp-image-1283" src="/wp-content/uploads/2018/05/images_vk.jpg" alt="" width="61" height="61" /></a>&nbsp;
 
-			<a href="https://openysheva-sv.livejournal.com/"><img class="alignnone wp-image-1285" src="/wp-content/uploads/2018/05/ZHZH_ikonka.png" alt="" width="60" height="60" /></a>&nbsp;
+			<a href="https://www.instagram.com/korp_gov_for_people/"><img class="alignnone wp-image-1285" src="https://e-ul.ru/wp-content/uploads/2019/08/4272e394f5ad.png" alt="" width="60" height="60" /></a>&nbsp;
 
 		</div>
 	</div>
