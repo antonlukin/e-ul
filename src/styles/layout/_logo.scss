@@ -1,0 +1,71 @@
+.logo {
+  display: flex;
+
+  width: auto;
+  height: 100%;
+
+  .logo-link {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    text-decoration: none;
+
+    .logo-link-image {
+      display: block;
+      position: relative;
+
+      width: 4rem;
+      height: 4rem;
+      margin-right: 0.625rem;
+
+      background-position: center center;
+      background-repeat: no-repeat;
+
+      &.logo-link-ulgov {
+        background-image: url('images/logo-ulgov.png');
+        background-size: 100% 95%;
+      }
+
+      &.logo-link-eul {
+        background-image: url('images/logo-eul.png');
+        background-size: 80%;
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        margin: 0 0.5rem 0.5rem;
+      }
+    }
+
+    .logo-link-title {
+      display: block;
+
+      font-family: $font-title;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.125;
+
+      color: $color-foreground;
+
+      text-transform: uppercase;
+      text-decoration: none;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+
+        font-size: 0.8125rem;
+        font-weight: 400;
+
+        text-align: center;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      justify-content: center;
+    }
+  }
+}

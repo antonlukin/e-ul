@@ -1,0 +1,103 @@
+.footer {
+  display: block;
+  position: relative;
+
+  margin-top: 4rem;
+  background-color: $color-foreground;
+
+  .footer-copy {
+    display: block;
+    position: relative;
+
+    @include block-size;
+
+    .footer-copy-info {
+      display: block;
+
+      width: 100%;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+
+      font-size: 0.8125rem;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      color: $color-border;
+
+      border-top: solid 1px $color-border;
+    }
+  }
+
+  .footer-menu {
+    display: block;
+
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+
+    @include block-size;
+
+    .footer-menu-list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .footer-menu-item {
+      display: flex;
+      flex-flow: column wrap;
+      width: 30%;
+
+      @media screen and (max-width: 1023px) {
+        width: 28%;
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+
+    .footer-menu-link {
+      font-family: $font-title;
+      font-size: 0.9375rem;
+      font-weight: 400;
+      letter-spacing: 0.75px;
+
+      margin: 2rem 0 0.75rem;
+      color: $color-disabled;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $color-disabled;
+      }
+    }
+
+    .sub-menu {
+      .footer-menu-item {
+        display: block;
+        width: 100%;
+      }
+
+      .footer-menu-link {
+        display: inline-block;
+        margin: 0.25rem 0;
+
+        font-family: $font-regular;
+        letter-spacing: 0;
+        font-size: 0.9375rem;
+        font-weight: 400;
+
+        color: $color-light;
+        text-decoration: none;
+        text-transform: none;
+
+        &:hover {
+          color: $color-disabled;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,145 @@
+.links {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 100%;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+
+  @include block-size;
+
+  .links-title {
+    display: block;
+    cursor: default;
+
+    width: 100%;
+    padding-top: 1.5rem;
+
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 1.25;
+
+    border-top: solid 1px $color-border;
+
+    @media screen and (max-width: 1023px) {
+      font-size: 1.75rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .links-list {
+    display: flex;
+    flex-flow: row wrap;
+
+    width: calc(100% + 3rem);
+    margin: 1rem -1.5rem 0;
+
+    @media screen and (max-width: 767px) {
+      width: calc(100% + 2rem);
+      margin: 1rem -1rem 0;
+    }
+  }
+
+  .links-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: calc(100% / 3);
+    padding: 1.5rem;
+
+    border-radius: 3px;
+
+    &:hover {
+      background: $color-dimmer;
+      box-shadow: 0 0 3px $color-links;
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: calc(100% / 2);
+      min-height: 0;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      padding: 1rem;
+
+      border-radius: 0;
+    }
+  }
+
+  .links-item-logo {
+    display: flex;
+    flex-basis: 3.5rem;
+    flex-shrink: 0;
+
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: 0.25rem;
+    padding: 0.5rem;
+
+    font-size: 0.75rem;
+    font-weight: 300;
+
+    background-color: $color-dimmer;
+    border: solid 1px $color-light;
+    border-radius: 3px;
+  }
+
+  .links-item-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .links-item-detail {
+    width: 100%;
+    margin-left: 1.5rem;
+  }
+
+  .links-item-tagline {
+    font-family: $font-title;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $color-foreground;
+    line-height: 1.25;
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .links-item-text {
+    margin: 0.25rem 0;
+
+    font-family: $font-title;
+    color: $color-disabled;
+
+    @media screen and (max-width: 479px) {
+      font-size: 0.9375rem;
+    }
+  }
+
+  .links-item-link {
+    font-family: $font-title;
+    font-size: 0.875rem;
+    color: $color-links;
+
+    @media screen and (max-width: 479px) {
+      font-size: 0.8125rem;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}

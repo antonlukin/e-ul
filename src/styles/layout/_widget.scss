@@ -1,0 +1,15 @@
+.widget {
+  display: block;
+
+  margin-bottom: 1rem;
+  overflow: hidden;
+
+  border-radius: 3px;
+
+  &:last-child {
+    position: sticky;
+    top: 1rem;
+
+    margin-bottom: 0;
+  }
+}

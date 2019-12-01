@@ -1,0 +1,149 @@
+.news {
+  display: block;
+  position: relative;
+
+  width: 100%;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+
+  @include block-size;
+
+  .news-title {
+    display: block;
+    cursor: default;
+
+    width: 100%;
+
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 1.25;
+
+    @media screen and (max-width: 1023px) {
+      font-size: 1.75rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .news-message {
+    margin-top: 1rem;
+  }
+
+  .news-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .news-item {
+    display: block;
+
+    width: 48%;
+    margin: 1.5rem 0;
+
+    @media screen and (max-width: 1023px) {
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    @media screen and (max-width: 479px) {
+      margin: 0.75rem 0;
+    }
+  }
+
+  .news-item-date {
+    display: block;
+    cursor: default;
+
+    margin-bottom: 0.5rem;
+
+    font-family: $font-title;
+    color: $color-disabled;
+
+    @media screen and (max-width: 479px) {
+      font-size: 0.875rem;
+    }
+  }
+
+  .news-item-link {
+    display: block;
+
+    &:hover {
+      .news-item-excerpt {
+        color: $color-links;
+      }
+    }
+  }
+
+  .news-item-title {
+    display: block;
+
+    font-family: $font-title;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.25;
+
+    color: $color-foreground;
+
+    @media screen and (max-width: 479px) {
+      font-size: 1rem;
+    }
+  }
+
+  .news-item-excerpt {
+    display: block;
+    position: relative;
+
+    margin-top: 0.75rem;
+
+    font-family: $font-title;
+    font-size: 1rem;
+
+    color: $color-foreground;
+
+    transition: color .3s;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+
+      width: 0.8125rem;
+      height: 0.8125rem;
+      margin-left: 0.5rem;
+
+      transform: translateY(50%);
+
+      background-image: sassvg('right', $color-links);
+    }
+
+    @media screen and (max-width: 479px) {
+      margin-top: 0.5rem;
+      font-size: 0.9375rem;
+    }
+  }
+
+  .news-item-more {
+    display: inline-block;
+    position: absolute;
+
+    margin-left: 0.5rem;
+
+    font-size: 0.8125rem;
+    color: $color-links;
+
+    transform: translateY(50%);
+  }
+
+  .news-button {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media screen and (max-width: 1023px) {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}

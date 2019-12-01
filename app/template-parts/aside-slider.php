@@ -1,131 +1,56 @@
-<aside class="slider" role="slider">
-	<div class="slider__control">
-		<button class="slider__control-item slider__control-item--prev" tabindex="-1">
-			<span class="icon icon--left">
-		</button>
+<?php
+/**
+ * Slider template part
+ *
+ * @package e-ul
+ * @since 1.2
+ */
 
-		<button class="slider__control-item slider__control-item--next" tabindex="-1">
-			<span class="icon icon--right">
-		</button>
-	</div>
+$slides = new WP_Query( array( 'post_type' => 'slider' ) ); ?>
 
-	<div class="slider__list">
-		<article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/region-services.jpg)">
-			<div class="slider__item-wrap">
+<?php if ( $slides->have_posts() ) : ?>
+	<aside class="swiper-container slider">
 
-				<div class="slider__item-content block">
-					<h2 class="slider__item-heading">Региональные госуслуги</h2>
-					<h3 class="slider__item-description">Портал государственных и муниципальных услуг Ульяновской&nbsp;области</h3>
+		<div class="swiper-wrapper">
+			<?php while($slides->have_posts()) : $slides->the_post(); ?>
+				<article class="swiper-slide slider-content">
+					<?php
+						if ( $image = get_the_post_thumbnail_url( null, 'slider' ) ) {
+							printf(
+								'<img class="slider-image" src="%1$s" alt="%2$s">',
+								esc_url( $image ),
+								esc_html( get_the_title() )
+							);
+						}
+					?>
 
-					<a class="slider__item-button button" href="https://gosuslugi.ulregion.ru" target="_blank">Перейти</a>
-				</div>
+					<div class="slider-item">
+						<?php
+							printf(
+								'<h2 class="slider-item-title">%s</h2>',
+								esc_html( get_the_title() )
+							);
 
-			</div>
-		</article>
+							printf(
+								'<div class="slider-item-text">%s</div>',
+								esc_html( get_the_excerpt() )
+							);
 
-	    <article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/figures.png)">
-			<div class="slider__item-wrap">
+							printf(
+								'<a class="slider-item-button button" href="%s" target="_blank">%s</a>',
+								esc_url( get_the_permalink() ),
+								__( 'Подробнее', 'e-ul' )
+							);
+						?>
+					</div>
+				</article>
+			<?php endwhile; ?>
+		</div>
 
-				<div class="slider__item-content block">
-					<h2 class="slider__item-heading">Госуслуги в цифрах</h2>
-					<h3 class="slider__item-description">О реализации региональных проектов в цифрах и фактах</h3>
+		<?php wp_reset_postdata(); ?>
 
-					<a class="slider__item-button button" href="/gosuslugi-in-figures/" target="_blank">Подробнее</a>
-				</div>
+		<button class="slider-nav slider-nav-prev">←</button>
+		<button class="slider-nav slider-nav-next">→</button>
 
-			</div>
-		</article>
-
-	    <article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/mamacenter.jpg)">
-			<div class="slider__item-wrap">
-
-				<div class="slider__item-content block">
-					<h2 class="slider__item-heading">Перинатальный центр</h2>
-					<h3 class="slider__item-description">3D-тур по перинатальному центру «Мама»</h3>
-
-					<a class="slider__item-button button" href="/special/perinatal-center/" target="_blank">Просмотреть</a>
-				</div>
-
-			</div>
-		</article>
-
-		<article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/gosuslugi.jpg)">
-			<div class="slider__item-wrap">
-
-				<div class="slider__item-content block">
-					<h2 class="slider__item-heading">Госуслуги</h2>
-					<h3 class="slider__item-description">Зарегистрируйтесь на gosuslugi.ru и получайте госуслуги без&nbsp;очередей и сложностей</h3>
-
-					<a class="slider__item-button button" href="https//gosuslugi.ru" target="_blank">Зарегистрироваться</a>
-				</div>
-
-			</div>
-		</article>
-
-        <article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/leader-russia.jpg)">
-			<div class="slider__item-wrap">
-
-				<div class="slider__item-content block">
-					<h2 class="slider__item-heading">Лидеры России</h2>
-					<h3 class="slider__item-description">Бросьте вызов тысячам управленцев и попадите в сообщество лидеров, которые определят будущее России</h3>
-
-                    <a class="slider__item-button button" href="https://лидерыроссии.рф/" target="_blank">Подробнее</a>
-				</div>
-
-			</div>
-		</article>
-
-
-        <article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/best-employee.jpg)">
-			<div class="slider__item-wrap">
-
-				<div class="slider__item-content block">
-					<h2 class="slider__item-heading">Лучшие сотрудники Корпорации</h2>
-					<h3 class="slider__item-description">Победители конкурса &laquo;Лучший специалист&raquo;</h3>
-
-					<a class="slider__item-button button" href="<?php echo home_url('/best-employee/'); ?>" target="_blank">Подробнее</a>
-				</div>
-
-			</div>
-		</article>
-
-
-		<article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/clever-region.jpg)">
-			<div class="slider__item-wrap">
-
-				<div class="slider__item-content block">
-					<h2 class="slider__item-heading">Умный регион</h2>
-					<h3 class="slider__item-description">Внедрение интеллектуальных цифровых технологий в Ульяновской области</h3>
-
-					<a class="slider__item-button button" href="<?php echo home_url('/umnyj-region/'); ?>">Перейти</a>
-				</div>
-
-			</div>
-		</article>
-
-		<article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/e-ulgov.jpg)">
-			<div class="slider__item-wrap">
-
-				<div class="slider__item-content block">
-					<h2 class="slider__item-heading">Электронное правительство</h2>
-
-					<a class="slider__item-button button" href="http://egov.ulregion.ru" target="_blank">Перейти</a>
-				</div>
-
-			</div>
-		</article>
-
-		<article class="slider__item" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/slider/mfc-ulgov.jpg)">
-			<div class="slider__item-wrap">
-
-				<div class="slider__item-content block">
-					<h2 class="slider__item-heading">Мои документы</h2>
-					<h3 class="slider__item-description">Получайте справки и выписки не выходя из дома</h3>
-
-					<a class="slider__item-button button" href="http://www.mfc.ulgov.ru/" target="_blank">Перейти</a>
-				</div>
-
-			</div>
-		</article>
-	</div>
-</aside>
+	</aside>
+<?php endif; ?>

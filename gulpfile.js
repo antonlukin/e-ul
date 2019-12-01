@@ -1,66 +1,123 @@
-var gulp       = require('gulp');
-var sass       = require('gulp-sass');
-var concat     = require('gulp-concat');
-var minifyCss  = require('gulp-minify-css');
-var uglify     = require('gulp-uglify');
-var plumber    = require('gulp-plumber');
-var flatten    = require('gulp-flatten');
-var prefix     = require('gulp-autoprefixer');
-var order      = require('gulp-order');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
+const concat = require('gulp-concat');
+const cleanCss = require('gulp-clean-css');
+const prefix = require('gulp-autoprefixer');
+const plumber = require('gulp-plumber');
+const uglify = require('gulp-uglify-es').default;
+const sassvg = require('gulp-sassvg');
 
-var path = {
-	source: 'src/',
-	assets: 'app/assets/'
-}
 
-gulp.task('scss', function() {
-	gulp.src([path.source + 'scss/app.scss'])
+gulp.task('vendor:swiper', (done) => {
+  gulp.src('node_modules/swiper/css/swiper.min.css')
+    .pipe(gulp.dest('app/assets/vendor'));
+
+  gulp.src('node_modules/swiper/js/swiper.min.js')
+    .pipe(gulp.dest('app/assets/vendor'));
+
+  done();
+});
+
+
+gulp.task('front:styles', (done) => {
+  gulp.src('src/styles/app.scss')
     .pipe(plumber())
+    .pipe(sassGlob())
     .pipe(sass({
-        errLogToConsole: true
+      errLogToConsole: true
     }))
-		.pipe(prefix({
-			browsers: [
-				'ie >= 10',
-				'ie_mob >= 10',
-				'ff >= 30',
-				'chrome >= 34',
-				'safari >= 7',
-				'opera >= 23',
-				'ios >= 7',
-				'android >= 4.4',
-				'bb >= 10'
-			]
-		}))
+    .pipe(prefix())
     .pipe(concat('styles.min.css'))
-    .pipe(minifyCss({
-        compatibility: 'ie8'
+    .pipe(cleanCss({
+      compatibility: 'ie9'
     }))
-    .pipe(gulp.dest(path.assets))
-})
+    .pipe(gulp.dest('app/assets'));
 
-gulp.task('js', function() {
-	gulp.src([path.source + '/js/**/*.js'])
-		.pipe(order(["vendor/tiny-slider.js", "app.js"]))
+  done();
+});
+
+
+gulp.task('front:scripts', (done) => {
+  gulp.src('src/scripts/*.js')
     .pipe(plumber())
-		.pipe(uglify())
+    .pipe(uglify())
     .pipe(concat('scripts.min.js'))
-    .pipe(gulp.dest(path.assets))
-})
+    .pipe(gulp.dest('app/assets'))
 
-gulp.task('images', function() {
-	gulp.src([path.source + '/images/**/*'])
-		.pipe(gulp.dest(path.assets + '/images/'));
-})
+  done();
+});
 
-gulp.task('fonts', function() {
-	gulp.src([path.source + '/fonts/**/*.{ttf,woff,eot,svg,woff2}'])
-		.pipe(flatten())
-		.pipe(gulp.dest(path.assets + '/fonts/'));
-})
 
-gulp.task('watch', function() {
-  gulp.watch(path.source + '/**/*', ['scss', 'js', 'images']);
-})
+gulp.task('front:images', (done) => {
+  gulp.src('src/images/*.{png,jph}')
+    .pipe(gulp.dest('app/assets/images/'));
 
-gulp.task('default', ['js', 'scss', 'images', 'fonts', 'watch']);
+  done();
+});
+
+
+gulp.task('front:fonts', (done) => {
+  gulp.src('src/fonts/**/*.{woff,woff2}')
+    .pipe(gulp.dest('app/assets/fonts/'));
+
+  done();
+});
+
+
+gulp.task('admin:scripts', (done) => {
+  gulp.src('src/admin/*.js')
+    .pipe(plumber())
+    .pipe(uglify())
+    .pipe(gulp.dest('app/assets/admin'))
+
+  done();
+});
+
+gulp.task('admin:styles', (done) => {
+  gulp.src('src/admin/*.scss')
+    .pipe(plumber())
+    .pipe(sassGlob())
+    .pipe(sass({
+      errLogToConsole: true
+    }))
+    .pipe(prefix())
+    .pipe(gulp.dest('app/assets/admin'));
+
+  done();
+});
+
+
+gulp.task('vendor:sassvg', (done) => {
+  gulp.src('src/images/svg/*.svg')
+    .pipe(sassvg({
+      outputFolder: 'src/styles/sassvg/'
+    }));
+
+  done();
+});
+
+
+/**
+ * frontend development task
+ */
+gulp.task('watch:front', (done) => {
+  gulp.watch('src/**/*', gulp.series('front:styles', 'front:scripts'));
+
+  done();
+});
+
+
+/**
+ * admin styles and scripts
+ */
+gulp.task('watch:admin', (done) => {
+  gulp.watch('src/admin/**/*', gulp.series('admin:styles', 'admin:scripts'));
+
+  done();
+});
+
+
+gulp.task('default', gulp.series(
+  'front:styles', 'front:scripts', 'front:images', 'front:fonts', 'admin:styles', 'admin:scripts', 'vendor:swiper'
+));
