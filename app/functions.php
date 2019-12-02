@@ -56,6 +56,17 @@ require get_template_directory() . '/classes/class-eul-slider.php';
 
 
 /**
+ * Include links post type register
+ */
+require get_template_directory() . '/classes/class-eul-links.php';
+
+/**
+ * Include feedback widget class
+ */
+require get_template_directory() . '/widgets/feedback.php';
+
+
+/**
  * Insert required js files
  */
 function eul_theme_scripts() {
@@ -258,7 +269,8 @@ add_filter( 'nav_menu_css_class', 'eul_menu_class', 10, 3 );
  * Register widget area.
  */
 function eul_init_widgets() {
-    $location = array(
+    // Sidebar
+    register_sidebar( array(
         'id' => 'eul-sidebar',
         'name' => __( 'Сайдбар', 'e-ul' ),
         'description' => __( 'Виджеты появятся в сайдбаре', 'e-ul' ),
@@ -266,9 +278,18 @@ function eul_init_widgets() {
         'after_widget' => '</div>',
         'before_title' => null,
         'after_title' => null,
-    );
+    ) );
 
-    register_sidebar( $location );
+    // Frontpage bottom
+    register_sidebar( array(
+        'id' => 'eul-frontpage',
+        'name' => __( 'На главной странице', 'e-ul' ),
+        'description' => __( 'Виджеты появятся снизу на главной странице', 'e-ul' ),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => null,
+        'after_title' => null,
+    ) );
 }
 
 add_action( 'widgets_init', 'eul_init_widgets' );
@@ -424,9 +445,3 @@ function eul_redirect_attachments() {
 }
 
 add_action( 'template_redirect', 'eul_redirect_attachments' );
-
-
-/**
- * Enable links manager
- */
-add_filter( 'pre_option_link_manager_enabled', '__return_true' );

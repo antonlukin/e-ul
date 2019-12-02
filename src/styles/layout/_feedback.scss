@@ -1,4 +1,4 @@
-.promo {
+.feedback {
   display: block;
   position: relative;
 
@@ -8,23 +8,29 @@
 
   @include block-size;
 
-  .promo__wrap {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: flex-start;
+  .feedback-title {
+    display: block;
+    cursor: default;
 
     width: 100%;
     padding-top: 1.5rem;
 
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 1.25;
+
     border-top: solid 1px $color-border;
+
+    @media screen and (max-width: 1023px) {
+      font-size: 1.75rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.5rem;
+    }
   }
 
-  .promo__heading {
-    width: 100%;
-  }
-
-  .promo__detail {
+  .feedback-text {
     margin: 1.5rem 0;
 
     @media screen and (max-width: 1023px) {
@@ -32,26 +38,8 @@
     }
   }
 
-  .promo__button {
-    display: block;
-
+  .feedback-button {
     margin-top: 1rem;
-  }
-
-  .promo__banner {
-    display: block;
-
-    margin-top: 3rem;
-    width: 100%;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-    @media screen and (max-width: 1023px) {
-      display: none;
-    }
   }
 
   @media screen and (max-width: 1023px) {

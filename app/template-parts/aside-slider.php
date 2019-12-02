@@ -12,13 +12,13 @@ $slides = new WP_Query( array( 'post_type' => 'slider' ) ); ?>
 	<aside class="swiper-container slider">
 
 		<div class="swiper-wrapper">
-			<?php while($slides->have_posts()) : $slides->the_post(); ?>
+			<?php while ( $slides->have_posts() ) : $slides->the_post(); ?>
 				<article class="swiper-slide slider-content">
 					<?php
-						if ( $image = get_the_post_thumbnail_url( null, 'slider' ) ) {
+						if ( has_post_thumbnail() ) {
 							printf(
 								'<img class="slider-image" src="%1$s" alt="%2$s">',
-								esc_url( $image ),
+								esc_url( get_the_post_thumbnail_url( null, 'slider' ) ),
 								esc_html( get_the_title() )
 							);
 						}

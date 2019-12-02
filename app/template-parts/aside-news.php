@@ -9,11 +9,11 @@
 $news = new WP_Query( array( 'posts_per_page' => 4 ) ); ?>
 
 <?php if ( $news->have_posts() ) : ?>
-	<section class="news">
+	<aside class="news">
 		<h2 class="news-title"><?php _e( 'Новости ИТ региона', 'e-ul' ); ?></h2>
 
 		<div class="news-list">
-			<?php while($news->have_posts()) : $news->the_post(); ?>
+			<?php while ( $news->have_posts() ) : $news->the_post(); ?>
 				<article class="news-item">
 					<?php
 						printf(
@@ -49,5 +49,5 @@ $news = new WP_Query( array( 'posts_per_page' => 4 ) ); ?>
 				__( 'Читать все новости', 'e-ul' )
 			);
 		?>
-	</section>
+	</aside>
 <?php endif; ?>

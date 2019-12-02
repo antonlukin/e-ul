@@ -38,7 +38,7 @@ jQuery(document).ready(function ($) {
       var selection = frame.state().get('selection');
       var attachment = $('#eul-slider-attachment').val();
 
-      return selection.add(wp.media.attachment(attachment));
+      selection.add(wp.media.attachment(attachment));
     });
 
     // On image select
@@ -62,7 +62,7 @@ jQuery(document).ready(function ($) {
       $('#eul-slider-image').attr('src', selection.url);
     });
 
-    return frame.open();
+    frame.open();
   });
 
 

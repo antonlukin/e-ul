@@ -7,6 +7,7 @@ const prefix = require('gulp-autoprefixer');
 const plumber = require('gulp-plumber');
 const uglify = require('gulp-uglify-es').default;
 const sassvg = require('gulp-sassvg');
+const flatten = require('gulp-flatten');
 
 
 gulp.task('vendor:swiper', (done) => {
@@ -15,6 +16,16 @@ gulp.task('vendor:swiper', (done) => {
 
   gulp.src('node_modules/swiper/js/swiper.min.js')
     .pipe(gulp.dest('app/assets/vendor'));
+
+  done();
+});
+
+
+gulp.task('vendor:sassvg', (done) => {
+  gulp.src('src/images/svg/*.svg')
+    .pipe(sassvg({
+      outputFolder: 'src/styles/sassvg/'
+    }));
 
   done();
 });
@@ -59,6 +70,7 @@ gulp.task('front:images', (done) => {
 
 gulp.task('front:fonts', (done) => {
   gulp.src('src/fonts/**/*.{woff,woff2}')
+    .pipe(flatten())
     .pipe(gulp.dest('app/assets/fonts/'));
 
   done();
@@ -82,17 +94,8 @@ gulp.task('admin:styles', (done) => {
       errLogToConsole: true
     }))
     .pipe(prefix())
+    .pipe(cleanCss())
     .pipe(gulp.dest('app/assets/admin'));
-
-  done();
-});
-
-
-gulp.task('vendor:sassvg', (done) => {
-  gulp.src('src/images/svg/*.svg')
-    .pipe(sassvg({
-      outputFolder: 'src/styles/sassvg/'
-    }));
 
   done();
 });

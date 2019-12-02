@@ -28,16 +28,17 @@ if ( ! class_exists( 'Eul_Slider' ) ) {
          */
         public static function register() {
             $labels = array(
-                'name' => __('Слайдер', 'e-ul'),
-                'menu_name' => __('Слайдер', 'e-ul'),
-                'singular_name' => __('Ссылка в слайдер', 'e-ul'),
-                'add_new' => __('Добавить слайд', 'e-ul'),
-                'edit_item' => __('Редактировать слайд', 'e-ul')
+                'name' => __( 'Слайдер', 'e-ul' ),
+                'menu_name' => __( 'Слайдер', 'e-ul' ),
+                'all_items' => __( 'Все слайды', 'e-ul' ),
+                'singular_name' => __( 'Ссылка в слайдер', 'e-ul' ),
+                'add_new' => __( 'Добавить слайд', 'e-ul' ),
+                'edit_item' => __( 'Редактировать слайд', 'e-ul' )
             );
 
             $options = array(
                 'labels' => $labels,
-                'label' => __('Слайдер', 'e-ul'),
+                'label' => __( 'Слайдер', 'e-ul' ),
                 'supports' => array( 'title' ),
                 'public' => true,
                 'menu_position' => 20,
@@ -63,7 +64,7 @@ if ( ! class_exists( 'Eul_Slider' ) ) {
             add_action( 'wp_enqueue_scripts', array( __CLASS__, 'add_swiper_assets' ) );
 
             // Add slider image size to options
-            add_filter( 'image_size_names_choose', array( __CLASS__, 'add_slider_size') );
+            add_filter( 'image_size_names_choose', array( __CLASS__, 'add_slider_size' ) );
 
             // Update slider post link
             add_filter( 'post_type_link', array( __CLASS__, 'replace_slider_link' ), 10, 2 );
@@ -233,7 +234,7 @@ if ( ! class_exists( 'Eul_Slider' ) ) {
 
             // Update post meta
             if ( isset ( $_REQUEST[ self::$post_meta ] ) ) {
-                $meta = array_map('sanitize_text_field', $_REQUEST[ self::$post_meta ] );
+                $meta = array_map( 'sanitize_text_field', $_REQUEST[ self::$post_meta ] );
 
                 // Duplicate attachment as thumbnail
                 if ( ! empty( $meta['attachment'] ) ) {

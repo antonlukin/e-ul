@@ -1,41 +1,54 @@
 <?php
 /**
- * Show all availilble bookmarks from link manager
+ * Links template part
  *
  * @package e-ul
  * @since 1.2
  */
-?>
 
-<?php
-	$term = get_term_by( 'slug', 'services', 'link_category' );
+$links = new WP_Query( array( 'post_type' => 'links' ) ); ?>
 
-	$args = array(
-		'category' => $term->term_id
-	);
-?>
-
-<?php if ( $links = get_bookmarks( $args ) ) : ?>
-
+<?php if ( $links->have_posts() ) : ?>
 	<aside class="links">
 		<h2 class="links-title"><?php _e( 'Электронные услуги и сервисы', 'e-ul' ); ?></h2>
 
 		<div class="links-list">
-			<?php foreach ( $links as $link ) : ?>
-				<a class="links-item" href="<?php echo esc_url( $link->link_url ); ?>" target="<?php esc_html_e( $link->link_target ); ?>" rel="noopener">
+			<?php while ( $links->have_posts() ) : $links->the_post(); ?>
+				<a class="links-item" href="<?php the_permalink(); ?>" target="_blank" rel="noopener">
 					<div class="links-item-logo">
-						<img class="links-item-image" src="<?php echo esc_url( $link->link_image ); ?>" alt="<?php esc_html_e( $link->link_name ); ?>">
+						<?php
+							if ( has_post_thumbnail() ) {
+								printf(
+									'<img class="links-item-image" src="%1$s" alt="%2$s">',
+									esc_url( get_the_post_thumbnail_url( null, 'slider' ) ),
+									esc_html( get_the_title() )
+								);
+							}
+						?>
 					</div>
 
 					<div class="links-item-detail">
-						<h3 class="links-item-tagline"><?php esc_html_e( $link->link_name ); ?></h3>
+						<?php
+							printf(
+								'<h3 class="links-item-tagline">%s</h3>',
+								esc_html( get_the_title() )
+							);
 
-						<p class="links-item-text"><?php esc_html_e( $link->link_description ); ?></p>
-						<p class="links-item-link"><?php echo esc_url( $link->link_url ); ?></p>
+							printf(
+								'<p class="links-item-text">%s</p>',
+								esc_html( get_the_excerpt() )
+							);
+
+							printf(
+								'<p class="links-item-link">%s</p>',
+								esc_url( get_the_permalink() )
+							);
+						?>
 					</div>
 				</a>
-			<?php endforeach; ?>
+			<?php endwhile; ?>
 		</div>
-	</aside>
 
+		<?php wp_reset_postdata(); ?>
+	</aside>
 <?php endif; ?>

@@ -8,15 +8,24 @@
  *
  * @package e-ul
  * @since 1.0
+ * @version 1.2
  */
 
 get_header(); ?>
 
 <?php
-	get_template_part('template-parts/aside', 'slider');
-	get_template_part('template-parts/aside', 'news');
-	get_template_part('template-parts/aside', 'links');
- 	get_template_part('template-parts/aside', 'promo');
+	// Show slider post type
+	get_template_part( 'template-parts/aside', 'slider' );
+
+	// Recent news 4 entries
+	get_template_part( 'template-parts/aside', 'news' );
+
+	// Show links post type
+	get_template_part( 'template-parts/aside', 'links' );
+
+	if ( is_active_sidebar( 'eul-frontpage' ) ) {
+		dynamic_sidebar( 'eul-frontpage' );
+	}
 ?>
 
 <?php get_footer();
