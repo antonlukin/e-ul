@@ -6,8 +6,8 @@
   width: 100%;
   max-width: 100%;
 
-  color: $color-foreground;
-  background-color: $color-ultralight;
+  color: $color-black;
+  background-color: darken($color-white, 6.5);
 
   .breadcrumbs__list {
     display: flex;
@@ -61,6 +61,10 @@
       background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgZmlsbD0iIzI2MjYyNiI+PHBhdGggZD0iTTI3Ny4zMzMgMTAyNGwtODUuMzMzLTEwMi40IDQ0My43MzMtNDA5LjYtNDQzLjczMy00MDkuNiA4NS4zMzMtMTAyLjQgNTU0LjY2NyA1MTItNTU0LjY2NyA1MTJ6Ij48L3BhdGg+PC9zdmc+);
       background-repeat: no-repeat;
       background-size: contain;
+
+      @media screen and (max-width: 767px) {
+        margin-left: 1rem;
+      }
     }
 
     &:first-child {
@@ -80,7 +84,7 @@
     }
 
     @media screen and (max-width: 767px) {
-      margin: 0 0.75rem;
+      margin: 0 0.5rem;
       font-size: 0.8125rem;
     }
   }

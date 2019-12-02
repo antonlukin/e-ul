@@ -1,4 +1,4 @@
-.news {
+.archive {
   display: block;
   position: relative;
 
@@ -8,7 +8,7 @@
 
   @include block-size;
 
-  .news-title {
+  .archive-title {
     display: block;
     cursor: default;
 
@@ -27,17 +27,23 @@
     }
   }
 
-  .news-message {
+  .archive-message {
+    display: block;
+
+    min-height: 10rem;
     margin-top: 1rem;
+
+    font-size: 1.125rem;
+    font-family: $font-title;
   }
 
-  .news-list {
+  .archive-list {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
   }
 
-  .news-item {
+  .archive-item {
     display: block;
 
     width: 48%;
@@ -53,31 +59,31 @@
     }
   }
 
-  .news-item-date {
+  .archive-item-date {
     display: block;
     cursor: default;
 
     margin-bottom: 0.5rem;
 
     font-family: $font-title;
-    color: $color-disabled;
+    color: darken($color-white, 40);
 
     @media screen and (max-width: 479px) {
       font-size: 0.875rem;
     }
   }
 
-  .news-item-link {
+  .archive-item-link {
     display: block;
 
     &:hover {
-      .news-item-excerpt {
+      .archive-item-excerpt {
         color: $color-links;
       }
     }
   }
 
-  .news-item-title {
+  .archive-item-title {
     display: block;
 
     font-family: $font-title;
@@ -85,14 +91,14 @@
     font-weight: 700;
     line-height: 1.25;
 
-    color: $color-foreground;
+    color: $color-black;
 
     @media screen and (max-width: 479px) {
       font-size: 1rem;
     }
   }
 
-  .news-item-excerpt {
+  .archive-item-excerpt {
     display: block;
     position: relative;
 
@@ -101,7 +107,7 @@
     font-family: $font-title;
     font-size: 1rem;
 
-    color: $color-foreground;
+    color: $color-black;
 
     transition: color .3s;
 
@@ -125,7 +131,7 @@
     }
   }
 
-  .news-item-more {
+  .archive-item-more {
     display: inline-block;
     position: absolute;
 
@@ -137,7 +143,7 @@
     transform: translateY(50%);
   }
 
-  .news-button {
+  .archive-button {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }

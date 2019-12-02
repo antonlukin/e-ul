@@ -1,0 +1,91 @@
+.pages {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: calc(100% + 3rem);
+  margin: 1rem -1.5rem;
+
+  .pages-item {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    position: relative;
+
+    width: calc(50% - 1rem);
+    padding: 1.5rem;
+    padding-left: 5rem;
+
+    background-position: 1.5rem center;
+    background-repeat: no-repeat;
+    background-size: auto 1.75rem;
+    background-image: sassvg('link', $color-links);
+
+    transition: background-color 0.25s;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: $color-dimmer;
+      box-shadow: 0 0 3px $color-links;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      padding: 1rem;
+      padding-left: 4rem;
+
+      background-position: 1rem center;
+      background-size: auto 1.5rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      padding: 0.5rem;
+      background-image: none;
+    }
+  }
+
+  .pages-item-tagline {
+    font-family: $font-title;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $color-black;
+    line-height: 1.25;
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .pages-item-text {
+    margin: 0.25rem 0;
+
+    font-family: $font-title;
+    color: darken($color-white, 40);
+
+    @media screen and (max-width: 479px) {
+      font-size: 0.9375rem;
+    }
+  }
+
+  .pages-item-link {
+    font-family: $font-title;
+    font-size: 0.875rem;
+    color: $color-links;
+
+    &:hover {
+      background: $color-dimmer;
+      box-shadow: 0 0 1px $color-links;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    width: calc(100% + 2rem);
+    margin: 1rem -1rem;
+  }
+
+  @media screen and (max-width: 479px) {
+    width: calc(100% + 1rem);
+    margin: 1rem -0.5rem;
+  }
+}

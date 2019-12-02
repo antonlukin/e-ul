@@ -21,6 +21,7 @@ function eul_theme_support() {
 
     // Set content-width.
     global $content_width;
+
     if ( ! isset( $content_width ) ) {
         $content_width = 700;
     }
@@ -54,11 +55,15 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/classes/class-eul-slider.php';
 
-
 /**
  * Include links post type register
  */
 require get_template_directory() . '/classes/class-eul-links.php';
+
+/**
+ * Include external url handler
+ */
+require get_template_directory() . '/classes/class-eul-external.php';
 
 /**
  * Include feedback widget class
@@ -96,6 +101,16 @@ function eul_theme_styles() {
 }
 
 add_action( 'wp_print_styles', 'eul_theme_styles' );
+
+
+/**
+ * We don't use gutenberg for now so it would be better to remove useless styles
+ */
+function eul_gutenberg_styles() {
+    wp_dequeue_style( 'wp-block-library' );
+}
+
+add_action( 'wp_print_styles', 'eul_gutenberg_styles', 11 );
 
 
 /**
@@ -276,8 +291,8 @@ function eul_init_widgets() {
         'description' => __( 'Виджеты появятся в сайдбаре', 'e-ul' ),
         'before_widget' => '<div class="widget">',
         'after_widget' => '</div>',
-        'before_title' => null,
-        'after_title' => null,
+        'before_title' => '<p class="widget-title">',
+        'after_title' => '</p>',
     ) );
 
     // Frontpage bottom
@@ -311,6 +326,10 @@ function eul_remove_widgets() {
     unregister_widget( 'WP_Widget_RSS' );
     unregister_widget( 'WP_Widget_Tag_Cloud' );
     unregister_widget( 'WP_Nav_Menu_Widget' );
+    unregister_widget( 'WP_Widget_Media_Audio' );
+    unregister_widget( 'WP_Widget_Media_Video' );
+    unregister_widget( 'WP_Widget_Media_Gallery' );
+
 }
 
 add_action( 'widgets_init', 'eul_remove_widgets', 11 );

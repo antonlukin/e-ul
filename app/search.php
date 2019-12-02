@@ -4,53 +4,41 @@
  *
  * @package e-ul
  * @since 1.0
+ * @version 1.2
  */
 
 get_header(); ?>
 
+<section class="archive">
+	<?php if ( have_posts() ) : ?>
+		<h2 class="archive-title"><?php _e( 'Результаты поиска: ', 'e-ul' ); ?></h2>
 
-<section class="news block">
-	<div class="news__wrap">
+		<div class="archive-list">
+			<?php
+				while ( have_posts() ) : the_post();
 
-<?php if(have_posts()) : ?>
+					get_template_part( 'template-parts/content', 'news' );
 
-		<h2 class="news__heading text text--heading"><?php printf(__( 'Результаты поиска по запросу: %s', 'e-ul' ), get_search_query()); ?></h2>
-
-		<div class="news__list">
-
-<?php
-
-	while(have_posts()) : the_post();
-
-		get_template_part('template-parts/content', 'excerpt');
-
-	endwhile;
-
-?>
-
+				endwhile;
+			?>
 		</div>
 
-<?php
-		the_posts_pagination([
-				'prev_text' => '<span class="icon icon--left">',
-				'next_text' => '<span class="icon icon--right">',
-				'mid_size' => 4
-		]);
-?>
+		<?php
+			the_posts_pagination(
+				array(
+					'prev_next' => false,
+					'mid_size' => 2
+				)
+			);
+		?>
+	<?php else: ?>
+		<h2 class="archive-title"><?php _e( 'Ничего не найдено', 'e-ul' ); ?></h2>
 
-<?php else: ?>
-	<h2 class="news__heading text text--heading"><?php _e( 'По вашему запросу ничего не найдено', 'e-ul' ); ?></h2>
-<?php
-				get_search_form();
-?>
-
-<?php endif; ?>
-
-	</div>
+		<div class="archive-message">
+			<p><?php _e( 'К сожалению, ничего не удалось найти по запросу.', 'e-ul' ); ?></p>
+			<p><?php _e( 'Попробуйте изменить ключевые слова и повторить.', 'e-ul' ); ?></p>
+		</div>
+	<?php endif; ?>
 </section>
 
-
-
-<?php
-
-get_footer();
+<?php get_footer();

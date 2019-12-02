@@ -3,7 +3,7 @@
   position: relative;
 
   margin-top: 4rem;
-  background-color: $color-foreground;
+  background-color: $color-black;
 
   .footer-copy {
     display: block;
@@ -21,9 +21,9 @@
       font-size: 0.8125rem;
       font-weight: 300;
       letter-spacing: 0.5px;
-      color: $color-border;
+      color: darken($color-white, 25);
 
-      border-top: solid 1px $color-border;
+      border-top: solid 1px darken($color-white, 25);
     }
   }
 
@@ -63,12 +63,8 @@
       letter-spacing: 0.75px;
 
       margin: 2rem 0 0.75rem;
-      color: $color-disabled;
+      color: darken($color-white, 40);
       text-transform: uppercase;
-
-      &:hover {
-        color: $color-disabled;
-      }
     }
 
     .sub-menu {
@@ -86,12 +82,12 @@
         font-size: 0.9375rem;
         font-weight: 400;
 
-        color: $color-light;
+        color: darken($color-white, 15);
         text-decoration: none;
         text-transform: none;
 
         &:hover {
-          color: $color-disabled;
+          color: darken($color-white, 40);
         }
       }
     }

@@ -55,7 +55,7 @@
     width: 100%;
     height: 18rem;
 
-    color: $color-background;
+    color: $color-white;
 
     @include block-size;
 
@@ -140,7 +140,7 @@
     border-radius: 3px;
 
     &.slider-nav-disabled {
-      color: $color-disabled;
+      color: darken($color-white, 40);
       cursor: default;
     }
 
@@ -155,7 +155,7 @@
 
   .slider-nav-next {
     right: 1rem;
-    background-image: sassvg('right', $color-background);
+    background-image: sassvg('right', $color-white);
 
     @media screen and (max-width: 767px) {
       right: 0;
@@ -164,7 +164,7 @@
 
   .slider-nav-prev {
     left: 1rem;
-    background-image: sassvg('left', $color-background);
+    background-image: sassvg('left', $color-white);
 
     @media screen and (max-width: 767px) {
       left: 0;

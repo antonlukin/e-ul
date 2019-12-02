@@ -19,7 +19,7 @@
     font-size: 2rem;
     line-height: 1.25;
 
-    border-top: solid 1px $color-border;
+    border-top: solid 1px darken($color-white, 25);
 
     @media screen and (max-width: 1023px) {
       font-size: 1.75rem;
@@ -40,6 +40,10 @@
 
   .feedback-button {
     margin-top: 1rem;
+  }
+
+  .sidebar & {
+    display: none;
   }
 
   @media screen and (max-width: 1023px) {

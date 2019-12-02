@@ -5,7 +5,7 @@
   margin-top: 1rem;
   padding-top: 1.5rem;
 
-  border-top: solid 1px $color-light;
+  border-top: solid 1px darken($color-white, 15);
 
 	.nav-links {
 		display: flex;
@@ -19,17 +19,18 @@
 	.page-numbers {
 		display: block;
 
-		padding-right: 1.5rem;
+		margin-right: 1.5rem;
 		font-size: 1.5rem;
 		font-weight: 300;
 		line-height: 1;
 
-		&.next {
-			font-size: .875rem;
+		@media screen and (max-width: 767px) {
+			margin-right: 1rem;
+			font-size: 1.25rem;
 		}
 
-		&.prev {
-			display: none;
+		@media screen and (max-width: 479px) {
+			font-size: 1rem;
 		}
 	}
 }

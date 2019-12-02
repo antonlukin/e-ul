@@ -22,10 +22,12 @@ class Eul_Widget_Feedback extends WP_Widget {
      * Outputs the content of the widget.
      */
     public function widget( $args, $instance ) {
-        $defaults = [
+        $defaults = array(
             'title' => '',
-            'text' => ''
-        ];
+            'text' => '',
+            'link' => '',
+            'button' => ''
+        );
 
         $instance = wp_parse_args( (array) $instance, $defaults );
 
@@ -45,6 +47,8 @@ class Eul_Widget_Feedback extends WP_Widget {
 
         $instance['title'] = sanitize_text_field( $new_instance['title'] );
         $instance['text'] = sanitize_textarea_field( $new_instance['text'] );
+        $instance['link'] = sanitize_text_field( $new_instance['link'] );
+        $instance['button'] = sanitize_text_field( $new_instance['button'] );
 
         return $instance;
     }
@@ -54,10 +58,12 @@ class Eul_Widget_Feedback extends WP_Widget {
      * Back-end widget form.
      */
     function form( $instance ) {
-        $defaults = [
+        $defaults = array(
             'title' => '',
-            'text' => ''
-        ];
+            'text' => '',
+            'link' => '',
+            'button' => ''
+        );
 
         $instance = wp_parse_args( (array) $instance, $defaults );
 
@@ -75,6 +81,22 @@ class Eul_Widget_Feedback extends WP_Widget {
             esc_attr( $this->get_field_name( 'text' ) ),
             __( 'Содержимое:', 'e-ul' ),
             esc_attr( $instance['text'] )
+        );
+
+        printf(
+            '<p><label for="%1$s">%3$s</label><input class="widefat" id="%1$s" name="%2$s" type="text" value="%4$s"></p>',
+            esc_attr( $this->get_field_id( 'link' ) ),
+            esc_attr( $this->get_field_name( 'link' ) ),
+            __( 'Ссылка с кнопки:', 'e-ul' ),
+            esc_attr( $instance['link'] )
+        );
+
+        printf(
+            '<p><label for="%1$s">%3$s</label><input class="widefat" id="%1$s" name="%2$s" type="text" value="%4$s"></p>',
+            esc_attr( $this->get_field_id( 'button' ) ),
+            esc_attr( $this->get_field_name( 'button' ) ),
+            __( 'Текст на кнопке:', 'e-ul' ),
+            esc_attr( $instance['button'] )
         );
     }
 }

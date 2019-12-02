@@ -1,8 +1,23 @@
-<form class="search" action="<?php echo esc_url ( home_url( '/' ) ); ?>" role="search" >
-	<input class="search__input" type="text" name="s" value="<?php echo get_search_query(); ?>" required placeholder="<?php _e( 'Поиск по новостям', 'e-ul' ) ?>">
+<?php
+/**
+ * Search form template part
+ *
+ * @since 1.0
+ * @version 1.2
+ */
+?>
 
-	<button class="search__button" type="submit">
-		<span class="search__button-search"></span>
-		<span class="search__button-right"></span>
+<form class="search" action="<?php echo esc_url ( home_url( '/' ) ); ?>" role="search">
+	<?php
+		printf(
+			'<input class="search-input" type="text" name="s" placeholder="%s" value="%s" required>',
+			__( 'Поиск по новостям', 'e-ul' ),
+			get_search_query()
+		);
+	?>
+
+	<button class="search-button" type="submit">
+		<span class="search-button-loop"></span>
+		<span class="search-button-right"></span>
 	</button>
 </form>

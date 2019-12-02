@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
 
-  .search__input {
+  .search-input {
     display: block;
 
     width: 100%;
@@ -15,17 +15,17 @@
     font-size: 0.875rem;
     line-height: 2.5rem;
 
-    color: $color-foreground;
-    background-color: $color-background;
+    color: $color-black;
+    background-color: $color-white;
 
-    border: solid 1px $color-light;
+    border: solid 1px darken($color-white, 15);
     border-radius: 3px;
     outline: none;
 
     transition: border .3s;
 
     &:focus {
-      border-color: $color-disabled;
+      border-color: darken($color-white, 40);
 
       @media screen and (max-width: 1023px) {
         border-color: transparent;
@@ -37,7 +37,7 @@
     }
   }
 
-  .search__button {
+  .search-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,26 +49,26 @@
     outline: none;
     cursor: pointer;
 
-    .search__button-right {
+    .search-button-right {
       display: none;
 
       height: 1rem;
       width: 1rem;
 
-      background-image: sassvg('right', $color-disabled);
+      background-image: sassvg('right', darken($color-white, 40));
 
       @media screen and (max-width: 1023px) {
         display: block;
       }
     }
 
-    .search__button-search {
+    .search-button-loop {
       display: block;
 
       height: 1rem;
       width: 1rem;
 
-      background-image: sassvg('search', $color-disabled);
+      background-image: sassvg('search', darken($color-white, 40));
 
       @media screen and (max-width: 1023px) {
         display: none;

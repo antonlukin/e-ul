@@ -14,13 +14,19 @@ if ( ! class_exists( 'Eul_Links' ) ) {
         /**
          * Post type slug
          */
-        public static $post_type = 'links';
+        private static $post_type = 'links';
 
 
         /**
          * Post links meta
          */
-        public static $post_meta = '_eul-links-meta';
+        private static $post_meta = '_eul-links-meta';
+
+
+        /**
+         * Custom metabox nonce
+         */
+        private static $metabox_nonce = 'eul-links-metabox';
 
 
         /**
@@ -72,7 +78,7 @@ if ( ! class_exists( 'Eul_Links' ) ) {
             $post_id = $post->ID;
 
             if ( get_post_type( $post_id ) === self::$post_type ) {
-                $meta = get_post_meta($post_id, self::$post_meta, true);
+                $meta = get_post_meta( $post_id, self::$post_meta, true );
 
                 if ( ! empty( $meta['link'] ) ) {
                     $post_link = esc_url( $meta['link'] );
@@ -90,7 +96,7 @@ if ( ! class_exists( 'Eul_Links' ) ) {
             $post_id = $post->ID;
 
             if ( get_post_type( $post_id ) === self::$post_type ) {
-                $meta = get_post_meta($post_id, self::$post_meta, true);
+                $meta = get_post_meta( $post_id, self::$post_meta, true );
 
                 if ( ! empty( $meta['text'] ) ) {
                     $post_excerpt = esc_html( $meta['text'] );
@@ -158,23 +164,23 @@ if ( ! class_exists( 'Eul_Links' ) ) {
                 __( 'Загрузить', 'e-ul' )
             );
 
-            wp_nonce_field( 'save-metabox', 'eul-links-metabox' );
+            wp_nonce_field( 'save-metabox', self::$metabox_nonce );
         }
 
 
-         /**
-          * Save metabox options
-          */
+        /**
+         * Save metabox options
+         */
         public static function save_metabox( $post_id ) {
             if ( get_post_type( $post_id ) !== self::$post_type ) {
                 return;
             }
 
-            if ( ! isset( $_REQUEST['eul-links-metabox'] ) ) {
+            if ( ! isset( $_REQUEST[ self::$metabox_nonce ] ) ) {
                 return;
             }
 
-            if ( ! wp_verify_nonce( $_REQUEST['eul-links-metabox'], 'save-metabox' ) ) {
+            if ( ! wp_verify_nonce( $_REQUEST[ self::$metabox_nonce ], 'save-metabox' ) ) {
                 return;
             }
 

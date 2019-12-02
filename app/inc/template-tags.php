@@ -5,7 +5,7 @@
  * @since 1.2.0
  */
 
-if ( ! function_exists( 'eul_breadcrumbs' ) ):
+if ( ! function_exists( 'eul_breadcrumbs' ) ) {
 
     function eul_breadcrumbs() {
         $pages = get_ancestors( get_the_ID(), 'page' );
@@ -27,4 +27,4 @@ if ( ! function_exists( 'eul_breadcrumbs' ) ):
         );
     }
 
-endif;
+}

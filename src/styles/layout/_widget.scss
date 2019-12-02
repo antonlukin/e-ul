@@ -6,6 +6,21 @@
 
   border-radius: 3px;
 
+  a {
+    display: block;
+  }
+
+  img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+  }
+
+  .widget-title {
+    display: none;
+  }
+
   &:last-child {
     position: sticky;
     top: 1rem;

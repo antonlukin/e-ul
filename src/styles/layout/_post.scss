@@ -1,9 +1,26 @@
 .post {
-  width: calc(100% - 21.25rem);
-  min-height: 16rem;
+  display: block;
+  position: relative;
 
-  .post__heading {
+  flex: 1;
+
+  .post-title {
+    display: block;
+    cursor: default;
+
     width: 100%;
+
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 1.25;
+
+    @media screen and (max-width: 1023px) {
+      font-size: 1.75rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.5rem;
+    }
   }
 
   .post__meta {
@@ -18,7 +35,7 @@
       margin-bottom: 1rem;
 
       font-family: $font-title;
-      color: $color-disabled;
+      color: darken($color-white, 40);
 
       cursor: default;
     }
@@ -28,10 +45,6 @@
     display: block;
 
     margin-top: 1rem;
-  }
-
-  &.post--stretch {
-    width: 100%;
   }
 
   @media screen and (max-width: 1023px) {

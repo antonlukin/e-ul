@@ -7,7 +7,7 @@
  */
 ?>
 
-<aside class="feedback">
+<div class="feedback">
 	<?php
 		printf(
 			'<h2 class="feedback-title">%s</h2>',
@@ -21,9 +21,8 @@
 
 		printf(
 			'<a class="feedback__button button" href="%s" role="button">%s</a>',
-			esc_html( 'mailto:info@e-ul.ru' ),
-			__( 'Оставить отзыв', 'e-ul' )
+			esc_url( $instance['link'] ),
+			esc_html( $instance['button'] )
 		);
 	?>
-
-</aside>
+</div>

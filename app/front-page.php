@@ -23,9 +23,9 @@ get_header(); ?>
 	// Show links post type
 	get_template_part( 'template-parts/aside', 'links' );
 
-	if ( is_active_sidebar( 'eul-frontpage' ) ) {
+	if ( is_active_sidebar( 'eul-frontpage' ) ) :
 		dynamic_sidebar( 'eul-frontpage' );
-	}
+	endif;
 ?>
 
 <?php get_footer();

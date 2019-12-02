@@ -1,4 +1,4 @@
-.ugc {
+.styles {
   p {
     margin: 1rem 0;
   }
@@ -12,6 +12,10 @@
     @media screen and (max-width: 1023px) {
       font-size: 1.75rem;
     }
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.5rem;
+    }
   }
 
   h2 {
@@ -23,6 +27,10 @@
 
     @media screen and (max-width: 1023px) {
       font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.375rem;
     }
   }
 
@@ -166,7 +174,7 @@
 
       font-size: 0.875rem;
       font-style: italic;
-      color: $color-disabled;
+      color: darken($color-white, 40);
       text-align: right;
     }
   }

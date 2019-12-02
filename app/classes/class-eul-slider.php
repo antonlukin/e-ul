@@ -14,13 +14,19 @@ if ( ! class_exists( 'Eul_Slider' ) ) {
         /**
          * Post type slug
          */
-        public static $post_type = 'slider';
+        private static $post_type = 'slider';
 
 
         /**
          * Post slider meta
          */
-        public static $post_meta = '_eul-slider-meta';
+        private static $post_meta = '_eul-slider-meta';
+
+
+        /**
+         * Custom metabox nonce
+         */
+        private static $metabox_nonce = 'eul-slider-metabox';
 
 
         /**
@@ -109,7 +115,7 @@ if ( ! class_exists( 'Eul_Slider' ) ) {
             $post_id = $post->ID;
 
             if ( get_post_type( $post_id ) === self::$post_type ) {
-                $meta = get_post_meta($post_id, self::$post_meta, true);
+                $meta = get_post_meta( $post_id, self::$post_meta, true );
 
                 if ( ! empty( $meta['link'] ) ) {
                     $post_link = esc_url( $meta['link'] );
@@ -127,7 +133,7 @@ if ( ! class_exists( 'Eul_Slider' ) ) {
             $post_id = $post->ID;
 
             if ( get_post_type( $post_id ) === self::$post_type ) {
-                $meta = get_post_meta($post_id, self::$post_meta, true);
+                $meta = get_post_meta( $post_id, self::$post_meta, true );
 
                 if ( ! empty( $meta['text'] ) ) {
                     $post_excerpt = esc_html( $meta['text'] );
@@ -204,23 +210,23 @@ if ( ! class_exists( 'Eul_Slider' ) ) {
                 absint( $meta['attachment'] )
             );
 
-            wp_nonce_field( 'save-metabox', 'eul-slider-metabox' );
+            wp_nonce_field( 'save-metabox', self::$metabox_nonce );
         }
 
 
-         /**
-          * Save metabox options
-          */
+        /**
+         * Save metabox options
+         */
         public static function save_metabox( $post_id ) {
             if ( get_post_type( $post_id ) !== self::$post_type ) {
                 return;
             }
 
-            if ( ! isset( $_REQUEST['eul-slider-metabox'] ) ) {
+            if ( ! isset( $_REQUEST[ self::$metabox_nonce ] ) ) {
                 return;
             }
 
-            if ( ! wp_verify_nonce( $_REQUEST['eul-slider-metabox'], 'save-metabox' ) ) {
+            if ( ! wp_verify_nonce( $_REQUEST[ self::$metabox_nonce ], 'save-metabox' ) ) {
                 return;
             }
 

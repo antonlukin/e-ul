@@ -10,7 +10,6 @@ $slides = new WP_Query( array( 'post_type' => 'slider' ) ); ?>
 
 <?php if ( $slides->have_posts() ) : ?>
 	<aside class="swiper-container slider">
-
 		<div class="swiper-wrapper">
 			<?php while ( $slides->have_posts() ) : $slides->the_post(); ?>
 				<article class="swiper-slide slider-content">
@@ -51,6 +50,5 @@ $slides = new WP_Query( array( 'post_type' => 'slider' ) ); ?>
 
 		<button class="slider-nav slider-nav-prev">←</button>
 		<button class="slider-nav slider-nav-next">→</button>
-
 	</aside>
 <?php endif; ?>

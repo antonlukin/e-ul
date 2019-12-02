@@ -35,12 +35,12 @@ $links = new WP_Query( array( 'post_type' => 'links' ) ); ?>
 							);
 
 							printf(
-								'<p class="links-item-text">%s</p>',
+								'<div class="links-item-text">%s</div>',
 								esc_html( get_the_excerpt() )
 							);
 
 							printf(
-								'<p class="links-item-link">%s</p>',
+								'<span class="links-item-link">%s</span>',
 								esc_url( get_the_permalink() )
 							);
 						?>
