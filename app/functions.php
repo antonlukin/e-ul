@@ -172,7 +172,8 @@ add_action( 'admin_init', 'eul_update_dashboard' );
 function eul_menus() {
     $locations = array(
         'main_menu' => __( 'Верхнее меню', 'e-ul' ),
-        'footer_menu' => __( 'Нижнее меню', 'e-ul' )
+        'footer_menu' => __( 'Нижнее меню', 'e-ul' ),
+        'social_menu' => __( 'Меню соцсетей', 'e-ul' )
     );
 
     register_nav_menus( $locations );
@@ -243,7 +244,7 @@ add_filter( 'nav_menu_item_id', '__return_empty_string' );
 /**
  * Add class to menu item link
  */
-function eul_menu_attributes ($atts, $item, $args) {
+function eul_menu_attributes( $atts, $item, $args ) {
     if ( $args->theme_location === 'main_menu' ) {
         $atts['class'] = 'header-menu-link';
 
@@ -256,6 +257,10 @@ function eul_menu_attributes ($atts, $item, $args) {
         $atts['class'] = 'footer-menu-link';
     }
 
+    if ( $args->theme_location === 'social_menu' ) {
+        $atts['class'] = 'social-menu-link';
+    }
+
     return $atts;
 }
 
@@ -265,13 +270,26 @@ add_filter( 'nav_menu_link_attributes', 'eul_menu_attributes', 10, 3 );
 /**
  * Add class to menu item tag
  */
-function eul_menu_class($classes, $item, $args) {
+function eul_menu_class( $classes, $item, $args ) {
     if ( $args->theme_location === 'main_menu' ) {
         $classes = array( 'header-menu-item' );
     }
 
+    if ( $args->theme_location === 'social_menu' ) {
+        $classes = array( 'social-menu-item' );
+    }
+
     if ( $args->theme_location === 'footer_menu' ) {
         $classes = array( 'footer-menu-item' );
+    }
+
+    // Add pre-defined menu classes
+    $item_classes = (array) get_post_meta( $item->ID, '_menu_item_classes', true );
+
+    foreach ( $item_classes  as $item_class ) {
+        if ( ! empty( $item_class ) ) {
+            $classes[] = $item_class;
+        }
     }
 
     return $classes;
@@ -361,24 +379,24 @@ function eul_remove_comments() {
     // Redirect any user trying to access comments page
     global $pagenow;
 
-    if ($pagenow === 'edit-comments.php') {
+    if ( $pagenow === 'edit-comments.php' ) {
         wp_redirect(admin_url());
         exit;
     }
 
     // Remove comments metabox from dashboard
-    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+    remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
 
     // Disable support for comments and trackbacks in post types
-    foreach (get_post_types() as $post_type) {
-        if (post_type_supports($post_type, 'comments')) {
-            remove_post_type_support($post_type, 'comments');
-            remove_post_type_support($post_type, 'trackbacks');
+    foreach ( get_post_types() as $post_type ) {
+        if ( post_type_supports( $post_type, 'comments' ) ) {
+            remove_post_type_support( $post_type, 'comments' );
+            remove_post_type_support( $post_type, 'trackbacks' );
         }
     }
 }
 
-add_action('admin_init', 'eul_remove_comments');
+add_action( 'admin_init', 'eul_remove_comments' );
 
 
 /**
@@ -396,7 +414,7 @@ add_action( 'wp_before_admin_bar_render', 'eul_comments_bar' );
 /**
  * Change standart body classes to custom
  */
-function eul_body_class($classes) {
+function eul_body_class( $classes ) {
     $classes = array();
 
     if ( is_single() ) {
