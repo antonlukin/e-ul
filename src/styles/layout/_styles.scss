@@ -67,19 +67,11 @@
   }
 
   h2, h3, h4, h5, h6 {
-    span {
+    span, em {
       display: block;
 
       font-size: 1rem;
       font-weight: 400;
-    }
-
-    em {
-      display: block;
-
-      font-size: 1rem;
-      font-weight: 400;
-      font-style: italic;
     }
   }
 
@@ -126,8 +118,8 @@
     font-weight: 700;
   }
 
-  em {
-    font-style: italic;
+  em, i {
+    font-style: normal;
   }
 
   video {
@@ -155,6 +147,11 @@
     }
   }
 
+  img {
+    border-radius: 3px;
+    box-shadow: 0 0 3px 1px #ddd;
+  }
+
   figure {
     display: block;
 
@@ -173,7 +170,7 @@
       margin: 0.5rem 0;
 
       font-size: 0.875rem;
-      font-style: italic;
+      font-style: normal;
       color: darken($color-white, 40);
       text-align: right;
     }

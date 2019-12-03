@@ -6,7 +6,7 @@
  * @since 1.2
  */
 
-$pages = new WP_Query( array( 'post_type' => 'page', 'post_parent' => get_the_ID() ) ); ?>
+$pages = new WP_Query( array( 'post_type' => 'page', 'orderby' => 'menu_order', 'post_parent' => get_the_ID() ) ); ?>
 
 <?php if ( $pages->have_posts() ) : ?>
     <div class="pages post-pages">
