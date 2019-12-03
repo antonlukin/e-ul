@@ -132,13 +132,13 @@
   .links-item-text {
     display: block;
 
-    margin: 0.25rem 0 0.5rem;
+    margin: 0.125rem 0 0.25rem;
 
     font-family: $font-title;
     color: darken($color-white, 40);
 
     @media screen and (max-width: 479px) {
-      margin: 0.075rem 0 0.25rem;
+      margin-top: 0.075rem;
       font-size: 0.9375rem;
     }
   }
