@@ -9,21 +9,35 @@
 ?>
 
 <footer class="footer">
-	<div class="footer-menu">
-		<ul class="footer-menu-list" role="navigation">
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'footer_menu',
-					'depth' => 2,
-					'items_wrap' => '%3$s',
-					'container' => false
-				) );
-			?>
-		</ul>
-	</div>
+	<ul class="footer-menu" role="navigation">
+		<?php
+			wp_nav_menu( array(
+				'theme_location' => 'footer_menu',
+				'depth' => 2,
+				'items_wrap' => '%3$s',
+				'container' => false
+			) );
+		?>
+	</ul>
 
-	<div class="footer-copy">
-		<p class="footer-copy-info">2017 &mdash; <?php echo date( 'Y' ) ?> &copy; <?php _e( 'ОГКУ «Правительство для граждан»', 'e-ul' ); ?></p>
+	<div class="footer-info">
+		<div class="social">
+			<ul class="social-menu" role="navigation">
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'social_menu',
+						'depth' => 1,
+						'items_wrap' => '%3$s',
+						'container' => false
+					) );
+				?>
+			</ul>
+
+			<p class="social-copy">
+				<span>2017 &mdash; <?php echo date( 'Y' ) ?> &copy;</span>
+				<span><?php _e( 'ОГКУ «Правительство для граждан»', 'e-ul' ); ?></span>
+			</p>
+		</div>
 	</div>
 </footer>
 

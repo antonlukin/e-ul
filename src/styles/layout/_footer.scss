@@ -5,42 +5,25 @@
   margin-top: 4rem;
   background-color: $color-black;
 
-  .footer-copy {
-    display: block;
+  .footer-info {
+    display: flex;
     position: relative;
 
+    width: 100%;
+
     @include block-size;
-
-    .footer-copy-info {
-      display: block;
-
-      width: 100%;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-
-      font-size: 0.8125rem;
-      font-weight: 300;
-      letter-spacing: 0.5px;
-      color: darken($color-white, 25);
-
-      border-top: solid 1px darken($color-white, 25);
-    }
   }
 
   .footer-menu {
-    display: block;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
 
     padding-top: 1rem;
     padding-bottom: 3rem;
 
     @include block-size;
-
-    .footer-menu-list {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
 
     .footer-menu-item {
       display: flex;

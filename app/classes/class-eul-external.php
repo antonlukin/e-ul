@@ -32,6 +32,9 @@ if ( ! class_exists( 'Eul_External' ) ) {
 
             // Update page list with custom link
             add_filter( 'display_post_states', array( __CLASS__, 'update_page_list' ), 10, 2 );
+
+            // Redirect frontend template
+            add_action( 'template_redirect', array( __CLASS__, 'redirect_external' ) );
         }
 
 
@@ -50,6 +53,24 @@ if ( ! class_exists( 'Eul_External' ) ) {
             }
 
             return $states;
+        }
+
+
+        /**
+         * Redirect external url on single template
+         */
+        public static function redirect_external() {
+            if ( is_page() ) {
+                $post_id = get_the_ID();
+
+                // Get external post meta
+                $meta = get_post_meta( $post_id, self::$post_meta, true );
+
+                if ( $meta ) {
+                    wp_redirect( $meta, 301 );
+                    exit;
+                }
+            }
         }
 
 
