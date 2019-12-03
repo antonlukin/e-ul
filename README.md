@@ -1,15 +1,10 @@
-# e-ul.ru
+# WordPress theme for e-ul.ru.  
 
-**Contributors:** Anton Lukin  
-**Version:** 1.2.0   
-**License:** MIT License  
-**License URI:** https://github.com/antonlukin/e-ul/blob/master/LICENSE  
+Simple and fast WordPress theme for government site.
 
+This theme was developed for certain website and not ready to go public. You can use it as starting point for your theme but don't forget to remove all site-dependent information.
 
-## Description
-
-[e-ul.ru](https://e-ul.ru) public repository.   
-See detailed description in Russian below.
+Note that all strings are ready for localization but lang files not included. However the code is under MIT License, we will truly appreciate your feedback about using this theme in your project.
 
 ## Installation
 
