@@ -140,7 +140,7 @@ function eul_excerpt_length() {
  * Update excerpt
  */
 function eul_update_excerpt( $excerpt ) {
-    preg_match_all( '~(.+?(?:\.|\!|\?))~is', $excerpt, $sentences );
+    preg_match_all( '~(.+?(?:\.|\!|\?)\s)~is', $excerpt, $sentences );
 
     if ( ! empty( $sentences[0] ) ) {
         $excerpt = '';
