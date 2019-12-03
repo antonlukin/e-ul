@@ -43,6 +43,11 @@
       width: calc(100% + 2rem);
       margin: 1rem -1rem 0;
     }
+
+    @media screen and (max-width: 479px) {
+      width: calc(100% + 1rem);
+      margin: 1rem -0.5rem;
+    }
   }
 
   .links-item {
@@ -70,8 +75,10 @@
     @media screen and (max-width: 767px) {
       width: 100%;
       padding: 1rem;
+    }
 
-      border-radius: 0;
+    @media screen and (max-width: 479px) {
+      padding: 0.5rem;
     }
   }
 
@@ -123,17 +130,22 @@
   }
 
   .links-item-text {
-    margin: 0.25rem 0;
+    display: block;
+
+    margin: 0.25rem 0 0.5rem;
 
     font-family: $font-title;
     color: darken($color-white, 40);
 
     @media screen and (max-width: 479px) {
+      margin: 0.075rem 0 0.25rem;
       font-size: 0.9375rem;
     }
   }
 
   .links-item-link {
+    display: block;
+
     font-family: $font-title;
     font-size: 0.875rem;
     color: $color-links;

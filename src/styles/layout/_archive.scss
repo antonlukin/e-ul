@@ -76,9 +76,13 @@
   .archive-item-link {
     display: block;
 
-    &:hover {
-      .archive-item-excerpt {
-        color: $color-links;
+    &:hover .archive-item-excerpt {
+      color: $color-links;
+    }
+
+    @media screen and (max-width: 767px) {
+      &:hover .archive-item-excerpt {
+        color: $color-black;
       }
     }
   }
@@ -92,10 +96,6 @@
     line-height: 1.25;
 
     color: $color-black;
-
-    @media screen and (max-width: 479px) {
-      font-size: 1rem;
-    }
   }
 
   .archive-item-excerpt {
@@ -127,7 +127,6 @@
 
     @media screen and (max-width: 479px) {
       margin-top: 0.5rem;
-      font-size: 0.9375rem;
     }
   }
 
