@@ -13,6 +13,9 @@ if ( ! function_exists( 'eul_breadcrumbs' ) ) {
         // Add home page to breadcrumbs
         $pages[] = get_option( 'page_on_front' );
 
+        // Leave only 3 last children
+        $pages = array_slice( $pages, 0, 3, true );
+
         foreach ( array_reverse( $pages ) as $page ) {
             printf(
                 '<a class="breadcrumbs__item" href="%s">%s</a>',

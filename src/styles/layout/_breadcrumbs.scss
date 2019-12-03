@@ -27,7 +27,7 @@
   }
 
   .breadcrumbs__item {
-    display: flex;
+    display: inline-block;
     align-items: center;
     flex: 0 0 auto;
     cursor: default;
@@ -52,7 +52,7 @@
 
     &::after {
       content: '';
-      display: block;
+      display: inline-block;
 
       width: 0.625rem;
       height: 0.625rem;
@@ -72,13 +72,20 @@
     }
 
     &:last-child {
-      padding-right: 1.25rem;
+      flex: 1 1 auto;
+
+      overflow: hidden;
+      margin-right: 0;
+
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
       &::after {
         display: none;
       }
 
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 1023px) {
+        flex: 0 0 auto;
         padding-right: 0.75rem;
       }
     }
