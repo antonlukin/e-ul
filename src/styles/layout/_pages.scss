@@ -41,7 +41,10 @@
 
     @media screen and (max-width: 479px) {
       padding: 0.5rem;
-      background-image: none;
+      padding-left: 2.25rem;
+
+      background-position: 0.5rem center;
+      background-size: auto 1rem;
     }
   }
 
@@ -52,18 +55,22 @@
     color: $color-black;
     line-height: 1.25;
 
-    @media screen and (max-width: 479px) {
+    @media screen and (max-width: 767px) {
       font-size: 1.125rem;
     }
   }
 
   .pages-item-text {
-    margin: 0.25rem 0;
+    margin: 0.5rem 0;
 
+    font-size: 1rem;
     font-family: $font-title;
+    line-height: 1.25;
+
     color: darken($color-white, 40);
 
-    @media screen and (max-width: 479px) {
+    @media screen and (max-width: 767px) {
+      margin: 0.25rem 0;
       font-size: 0.9375rem;
     }
   }

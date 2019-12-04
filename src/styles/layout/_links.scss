@@ -17,19 +17,9 @@
     width: 100%;
     padding-top: 1.5rem;
 
-    font-weight: 300;
-    font-size: 2rem;
-    line-height: 1.25;
-
     border-top: solid 1px darken($color-white, 25);
 
-    @media screen and (max-width: 1023px) {
-      font-size: 1.75rem;
-    }
-
-    @media screen and (max-width: 479px) {
-      font-size: 1.5rem;
-    }
+    @include header-title;
   }
 
   .links-list {
