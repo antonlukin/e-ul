@@ -61,7 +61,7 @@ gulp.task('front:scripts', (done) => {
 
 
 gulp.task('front:images', (done) => {
-  gulp.src('src/images/*.{png,jph}')
+  gulp.src('src/images/*.{png,jpg}')
     .pipe(gulp.dest('app/assets/images/'));
 
   done();

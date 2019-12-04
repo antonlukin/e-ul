@@ -13,6 +13,18 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#262626">
+    <meta name="description" content="<?php _e( 'Приближаем госуслуги к гражданам, развиваем информационные технологии в Ульяновской области', 'e-ul' ); ?>">
+
+    <meta property="og:site_name" content="<?php _e( 'Корпорация Правительство для граждан', 'e-ul' ); ?>">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:description" content="<?php _e( 'Приближаем госуслуги к гражданам, развиваем информационные технологии в Ульяновской области', 'e-ul' ); ?>">
+    <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/images/poster.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://e-ul.ru/">
+    <meta property="og:title" content="<?php _e( 'Корпорация Правительство для граждан', 'e-ul' ); ?>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="<?php echo get_template_directory_uri(); ?>/assets/images/poster.jpg">
 
     <?php wp_head(); ?>
 </head>
